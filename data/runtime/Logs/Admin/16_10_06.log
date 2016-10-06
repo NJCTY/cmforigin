@@ -1,0 +1,485 @@
+[ 2016-10-06T20:29:27+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002393s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'njupt' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0024s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `check_users` SET `user_login`='njupt',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='',`user_email`='ctygood@gmail.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-06 20:29:27',`create_time`='2016-10-06 15:58:05',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '3' [ RunTime:0.0003s ]
+
+[ 2016-10-06T20:32:59+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002477s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `check_users` WHERE `user_email` = 'b15011828@njupt.edu.cn' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0023s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `check_users` SET `user_login`='admin',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='admin',`user_email`='B15011828@njupt.edu.cn',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-06 20:32:59',`create_time`='2016-09-20 03:29:36',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0002s ]
+
+[ 2016-10-06T20:33:05+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-10-06T20:33:07+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-10-06T20:33:09+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=edit&id=162&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-10-06T20:33:12+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002445s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_menu` [ RunTime:0.0030s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `check_auth_rule` [ RunTime:0.0027s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\checkorigin\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT `id` FROM `check_menu` WHERE `app` = 'Portal' AND `model` = 'AdminPage' AND `action` = 'companyinfo' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\checkorigin\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `check_menu` SET `parentid`='0',`name`='公司信息管理',`app`='Portal',`model`='AdminPage',`action`='companyinfo',`data`='',`icon`='',`remark`='',`status`='1',`type`='0' WHERE `id` = 162 [ RunTime:0.0003s ]
+SQL: SELECT * FROM `check_auth_rule` WHERE `name` = 'portal/adminpage/companyinfo' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `check_auth_rule` SET `name`='portal/adminpage/companyinfo',`module`='Portal',`type`='admin_url',`title`='公司信息管理' WHERE `name` = 'portal/adminpage/companyinfo' [ RunTime:0.0009s ]
+
+[ 2016-10-06T20:33:12+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=edit&id=162&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-10-06T20:33:25+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002315s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'njupt' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0024s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `check_users` SET `user_login`='njupt',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='',`user_email`='ctygood@gmail.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-06 20:33:25',`create_time`='2016-10-06 15:58:05',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '3' [ RunTime:0.0003s ]
+
+[ 2016-10-06T20:35:35+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002600s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `check_users` WHERE `user_email` = 'b15011828@njupt.edu.cn' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0023s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `check_users` SET `user_login`='admin',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='admin',`user_email`='B15011828@njupt.edu.cn',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-06 20:35:35',`create_time`='2016-09-20 03:29:36',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0003s ]
+
+[ 2016-10-06T20:35:42+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Rbac&a=authorize&id=3
+NOTIC: D方法实例化没找到模型类Common\Model\AuthAccessModel
+
+[ 2016-10-06T20:36:39+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-10-06T20:36:41+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=edit&id=162&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-10-06T20:36:49+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002619s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_menu` [ RunTime:0.0027s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `check_auth_rule` [ RunTime:0.0026s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\checkorigin\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT `id` FROM `check_menu` WHERE `app` = 'Portal' AND `model` = 'AdminPage' AND `action` = 'companyinfo' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\checkorigin\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `check_menu` SET `parentid`='0',`name`='公司信息管理',`app`='Portal',`model`='AdminPage',`action`='companyinfo',`data`='',`icon`='',`remark`='',`status`='1',`type`='1' WHERE `id` = 162 [ RunTime:0.0002s ]
+SQL: SELECT * FROM `check_auth_rule` WHERE `name` = 'portal/adminpage/companyinfo' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `check_auth_rule` SET `name`='portal/adminpage/companyinfo',`module`='Portal',`type`='admin_url',`title`='公司信息管理' WHERE `name` = 'portal/adminpage/companyinfo' [ RunTime:0.0009s ]
+
+[ 2016-10-06T20:36:49+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=edit&id=162&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-10-06T20:36:52+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-10-06T20:36:59+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Rbac&a=authorize&id=3
+NOTIC: D方法实例化没找到模型类Common\Model\AuthAccessModel
+
+[ 2016-10-06T20:37:07+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Rbac&a=authorize&id=3
+NOTIC: D方法实例化没找到模型类Common\Model\AuthAccessModel
+
+[ 2016-10-06T20:37:10+08:00 ] 127.0.0.1 /index.php?g=Admin&m=rbac&a=authorize_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001785s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `check_role` [ RunTime:0.0029s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthAccessModel
+SQL: SHOW COLUMNS FROM `check_auth_access` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `check_menu` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `check_auth_rule` [ RunTime:0.0026s ]
+SQL: DELETE FROM `check_auth_access` WHERE `role_id` = 3 AND `type` = 'admin_url' [ RunTime:0.0015s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','admin/content/default','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','api/guestbookadmin/index','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','api/guestbookadmin/delete','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','comment/commentadmin/index','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','comment/commentadmin/delete','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','comment/commentadmin/check','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/index','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/listorders','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/top','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/recommend','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/move','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 12 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/check','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/delete','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 14 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/edit','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/edit_post','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/add','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/add_post','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/index','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/listorders','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 20 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/delete','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 21 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/edit','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 22 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/edit_post','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/add','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/add_post','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 25 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/index','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 26 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/listorders','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/delete','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 28 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/edit','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 29 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/edit_post','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 30 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/add','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/add_post','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 32 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','admin/recycle/default','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/recyclebin','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 34 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/restore','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 35 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/clean','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 36 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/recyclebin','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 37 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/clean','admin_url') [ RunTime:0.0003s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 38 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/restore','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 162 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/companyinfo','admin_url') [ RunTime:0.0002s ]
+
+[ 2016-10-06T20:37:54+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001674s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'njupt' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0024s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `check_users` SET `user_login`='njupt',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='',`user_email`='ctygood@gmail.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-06 20:37:54',`create_time`='2016-10-06 15:58:05',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '3' [ RunTime:0.0003s ]
+
+[ 2016-10-06T20:42:33+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002233s ]
+
+[ 2016-10-06T20:42:36+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002265s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `check_users` WHERE `user_email` = 'b15011828@njupt.edu.cn' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0023s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `check_users` SET `user_login`='admin',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='admin',`user_email`='B15011828@njupt.edu.cn',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-06 20:42:36',`create_time`='2016-09-20 03:29:36',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0002s ]
+
+[ 2016-10-06T20:42:48+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Rbac&a=authorize&id=2
+NOTIC: D方法实例化没找到模型类Common\Model\AuthAccessModel
+
+[ 2016-10-06T20:42:54+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Rbac&a=authorize&id=3
+NOTIC: D方法实例化没找到模型类Common\Model\AuthAccessModel
+
+[ 2016-10-06T20:45:43+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-10-06T20:45:48+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=add&parentid=162&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-10-06T20:46:31+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000451s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001719s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_menu` [ RunTime:0.0026s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `check_auth_rule` [ RunTime:0.0026s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\checkorigin\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `check_menu` WHERE `app` = 'Portal' AND `model` = 'AdminPage' AND `action` = 'post' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `parentid` FROM `check_menu` WHERE `id` = 162 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\checkorigin\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `check_menu` (`parentid`,`name`,`app`,`model`,`action`,`data`,`icon`,`remark`,`status`,`type`) VALUES ('162','添加修改公司信息','Portal','AdminPage','post','','','','0','1') [ RunTime:0.0003s ]
+SQL: SELECT * FROM `check_auth_rule` WHERE `name` = 'portal/adminpage/post' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `check_auth_rule` (`name`,`module`,`type`,`title`) VALUES ('portal/adminpage/post','Portal','admin_url','添加修改公司信息') [ RunTime:0.0004s ]
+
+[ 2016-10-06T20:46:31+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Menu&a=index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-10-06T20:46:41+08:00 ] 127.0.0.1 /index.php?g=Admin&m=Rbac&a=authorize&id=3
+NOTIC: D方法实例化没找到模型类Common\Model\AuthAccessModel
+
+[ 2016-10-06T20:46:44+08:00 ] 127.0.0.1 /index.php?g=Admin&m=rbac&a=authorize_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001909s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role` [ RunTime:0.0029s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthAccessModel
+SQL: SHOW COLUMNS FROM `check_auth_access` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `check_menu` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `check_auth_rule` [ RunTime:0.0036s ]
+SQL: DELETE FROM `check_auth_access` WHERE `role_id` = 3 AND `type` = 'admin_url' [ RunTime:0.0015s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','admin/content/default','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','api/guestbookadmin/index','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','api/guestbookadmin/delete','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','comment/commentadmin/index','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','comment/commentadmin/delete','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','comment/commentadmin/check','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/index','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/listorders','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/top','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/recommend','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/move','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 12 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/check','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/delete','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 14 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/edit','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/edit_post','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/add','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/add_post','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/index','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/listorders','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 20 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/delete','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 21 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/edit','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 22 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/edit_post','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/add','admin_url') [ RunTime:0.0003s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminterm/add_post','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 25 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/index','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 26 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/listorders','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/delete','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 28 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/edit','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 29 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/edit_post','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 30 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/add','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/add_post','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 32 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','admin/recycle/default','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/recyclebin','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 34 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/restore','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 35 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpost/clean','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 36 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/recyclebin','admin_url') [ RunTime:0.0001s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 37 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/clean','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 38 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/restore','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 162 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/companyinfo','admin_url') [ RunTime:0.0002s ]
+SQL: SELECT `app`,`model`,`action` FROM `check_menu` WHERE `id` = 163 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `check_auth_access` (`role_id`,`rule_name`,`type`) VALUES ('3','portal/adminpage/post','admin_url') [ RunTime:0.0001s ]
+
+[ 2016-10-06T20:46:57+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002234s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'njupt' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0023s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `check_users` SET `user_login`='njupt',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='',`user_email`='ctygood@gmail.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-06 20:46:57',`create_time`='2016-10-06 15:58:05',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '3' [ RunTime:0.0003s ]
+
+[ 2016-10-06T20:51:18+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002393s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'b15011828' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-06T20:51:22+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002282s ]
+
+[ 2016-10-06T20:51:25+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002281s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'b15011828' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-06T20:51:31+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002289s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'njupt' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0024s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `check_users` SET `user_login`='njupt',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='',`user_email`='ctygood@gmail.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-06 20:51:31',`create_time`='2016-10-06 15:58:05',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '3' [ RunTime:0.0002s ]
+
+[ 2016-10-06T20:51:44+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000896s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001700s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `check_users` WHERE `user_email` = 'b15011828@njupt.edu.cn' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0023s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `check_users` SET `user_login`='admin',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='admin',`user_email`='B15011828@njupt.edu.cn',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-06 20:51:44',`create_time`='2016-09-20 03:29:36',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0003s ]
+
+[ 2016-10-06T20:52:18+08:00 ] 127.0.0.1 /index.php?g=Admin&m=User&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001930s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `check_role` [ RunTime:0.0027s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\checkorigin\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'addtest' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `check_users` WHERE `user_email` = '222@22.com' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\checkorigin\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `check_users` (`user_login`,`user_pass`,`user_email`,`create_time`) VALUES ('addtest','###d2df176462c29cba4dcbdd421729547a','222@22.com','2016-10-06 20:52:18') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0029s ]
+SQL: INSERT INTO `check_role_user` (`role_id`,`user_id`) VALUES ('2','4') [ RunTime:0.0002s ]
+
+[ 2016-10-06T20:52:29+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001569s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'addtest' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0024s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '4' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `check_users` SET `user_login`='addtest',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='',`user_email`='222@22.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-06 20:52:29',`create_time`='2016-10-06 20:52:18',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '4' [ RunTime:0.0003s ]
+
+[ 2016-10-06T20:52:46+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002410s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0024s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `check_users` SET `user_login`='admin',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='admin',`user_email`='B15011828@njupt.edu.cn',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-06 20:52:46',`create_time`='2016-09-20 03:29:36',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0003s ]
+
+[ 2016-10-06T20:53:00+08:00 ] 127.0.0.1 /index.php?g=Admin&m=User&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002693s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `check_role` [ RunTime:0.0025s ]
+NOTIC: [8] Undefined index: validate C:\xampp\htdocs\checkorigin\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'addtest' AND `id` <> '4' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `check_users` WHERE `user_email` = '222@22.com' AND `id` <> '4' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto C:\xampp\htdocs\checkorigin\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [8] Undefined index: birthday C:\xampp\htdocs\checkorigin\simplewind\Core\Library\Think\Model.class.php 第 1163 行.
+SQL: UPDATE `check_users` SET `user_login`='addtest',`user_email`='222@22.com' WHERE `id` = '4' [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0028s ]
+SQL: DELETE FROM `check_role_user` WHERE `user_id` = 4 [ RunTime:0.0002s ]
+SQL: INSERT INTO `check_role_user` (`role_id`,`user_id`) VALUES ('3','4') [ RunTime:0.0001s ]
+
+[ 2016-10-06T20:53:09+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001580s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'addtest' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0023s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '4' AND `status` = 1  [ RunTime:0.0002s ]
+SQL: UPDATE `check_users` SET `user_login`='addtest',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='',`user_email`='222@22.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-06 20:53:09',`create_time`='2016-10-06 20:52:18',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '4' [ RunTime:0.0003s ]
+

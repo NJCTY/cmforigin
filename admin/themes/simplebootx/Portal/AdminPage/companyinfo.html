@@ -1,0 +1,44 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+
+		<form class="form-horizontal js-ajax-forms" action="{:U('AdminPage/post')}" method="post">
+			<fieldset>
+				<div class="tabbable">
+					<div class="tab-content">
+						<div class="tab-pane active" id="A">
+							<fieldset>
+								<div class="control-group">
+									<label class="control-label">公司名称</label>
+									<div class="controls">
+										<input type="text" name="name" value="{$company.name}"><span class="form-required">*</span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">注册资本</label>
+									<div class="controls">
+										<input type="text" name="money" value="{$company.money}"><span class="form-required">*</span>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label">公司介绍</label>
+									<div class="controls">
+										<textarea name="introduction" rows="5" cols="57">{$company.introduction}</textarea>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+
+
+				<div class="form-actions">
+					<button type="submit" class="btn btn-primary  js-ajax-submit">{:L("SAVE")}</button>
+				</div>
+			</fieldset>
+		</form>
+
+	</div>
+	
+</body>
+</html>
