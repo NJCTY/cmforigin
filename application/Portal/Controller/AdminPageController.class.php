@@ -22,9 +22,41 @@ class AdminPageController extends AdminbaseController {
 			}
 		$this->display();
 	}
-
+	//文件上传函数
+	function imgupload(){
+            $upload = new \Think\Upload();// 实例化上传类
+    $upload->maxSize   =     3145728 ;// 设置附件上传大小
+    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+    $upload->rootPath  =      './Uploads/'; // 设置附件上传根目录
+    $upload->savePath  =      ''; // 设置附件上传（子）目录
+    // 上传文件 
+    $info   =   $upload->upload();
+    if(!$info) {// 上传错误提示错误信息
+            $this->error($upload->getError());
+            $info['success'] = false;
+        }
+        else{
+			echo "hahahachengongle";
+        }
+	}
 	function post(){
 		if (IS_POST) {
+			            $upload = new \Think\Upload();// 实例化上传类
+    $upload->maxSize   =     3145728 ;// 设置附件上传大小
+    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+    $upload->rootPath  =      './Uploads/'; // 设置附件上传根目录
+    $upload->savePath  =      ''; // 设置附件上传（子）目录
+    // 上传文件 
+    $info   =   $upload->upload();
+    if(!$info) {// 上传错误提示错误信息
+
+        }
+        else{
+			 foreach($info as $file){
+                 $img ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['savepath'].$file['savename'];
+                                    }
+             $data['image'] = $img;
+        }
 			//接收post信息
 			$data['name'] = $_POST['name'];
 			$data['money'] = $_POST['money'];
@@ -41,6 +73,7 @@ class AdminPageController extends AdminbaseController {
 			echo "公司信息修改完成！";
 		}
 	}
+
 
 	function index(){
 		$admincode = sp_get_current_admin_id();

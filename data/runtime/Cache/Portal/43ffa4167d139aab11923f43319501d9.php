@@ -48,7 +48,7 @@ var GV = {
 <body>
 	<div class="wrap js-check-wrap">
 
-		<form class="form-horizontal js-ajax-forms" action="<?php echo U('AdminPage/post');?>" method="post">
+		<form class="form-horizontal js-ajax-forms" action="<?php echo U('AdminPage/post');?>" method="post" enctype="multipart/form-data" >
 			<fieldset>
 				<div class="tabbable">
 					<div class="tab-content">
@@ -73,6 +73,18 @@ var GV = {
 										<textarea name="introduction" rows="5" cols="57"><?php echo ($company["introduction"]); ?></textarea>
 									</div>
 								</div>
+								<div class="control-group">
+								<label class="control-label">公司介绍图片上传</label>
+								<div class="controls">
+
+								<input id="file" type="file" name="img"/>
+								</div>
+
+
+
+
+
+								</div>
 							</fieldset>
 						</div>
 
@@ -82,7 +94,6 @@ var GV = {
 				</div>
 			</fieldset>
 		</form>
-
 	</div>
 	
 </body>
