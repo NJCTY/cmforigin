@@ -59,9 +59,7 @@ var GV = {
 			<button class="btn btn-primary"><?php echo L('SEARCH');?></button>
 		</form> -->
 		<form class="js-ajax-form" method="post">
-			<div class="table-actions">
-				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="<?php echo U('AdminPage/delete');?>" data-subcheck="true" data-msg="<?php echo L('DELETE_CONFIRM_MESSAGE');?>"><?php echo L('DELETE');?></button>
-			</div>
+
 			<table class="table table-hover table-bordered table-list">
 				<thead>
 					<tr>
@@ -77,13 +75,15 @@ var GV = {
 				<?php if(is_array($posts)): foreach($posts as $key=>$vo): ?><tr>
 					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="<?php echo ($vo["id"]); ?>"></td>
 					<td><a><?php echo ($vo["productcode"]); ?></a></td>
-					<td><a href="<?php echo U('portal/page/index',array('id'=>$vo['id']));?>" target="_blank"><span><?php echo ($vo["name"]); ?></span></a></td>
+					<td><a href="<?php echo U('show/index/index',array('id'=>($code.$vo['productcode'])));?>" target="_blank"><span><?php echo ($vo["name"]); ?></span></a></td>
 					 <td><?php echo ($vo["kindname"]); ?></td>
 					<td><?php echo ($name); ?></td>
 					<td><?php echo ($vo["timestamp"]); ?></td>
 					<td>
-						<a href="<?php echo U('AdminPage/edit',array('id'=>$vo['id']));?>"><?php echo L('EDIT');?></a>|
-						<a href="<?php echo U('AdminPage/delete',array('id'=>$vo['id']));?>" class="js-ajax-delete"><?php echo L('DELETE');?></a>
+						<a href="<?php echo U('AdminPage/edit',array('id'=>($code.$vo['productcode'])));?>"><?php echo L('EDIT');?></a>|
+						<a href="<?php echo U('AdminPage/delete',array('id'=>($code.$vo['productcode'])));?>" class="js-ajax-delete"><?php echo L('DELETE');?></a>
+
+
 					</td>
 				</tr><?php endforeach; endif; ?>
 				<!-- <tfoot>
@@ -98,9 +98,9 @@ var GV = {
 					</tr>
 				</tfoot> -->
 			</table>
-			<div class="table-actions">
+<!-- 			<div class="table-actions">
 				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="<?php echo U('AdminPage/delete');?>" data-subcheck="true" data-msg="你确定删除吗？"><?php echo L('DELETE');?></button>
-			</div>
+			</div> -->
 			<div class="pagination"><?php echo ($Page); ?></div>
 		</form>
 	</div>

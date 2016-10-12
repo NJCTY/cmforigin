@@ -41,7 +41,7 @@
     	
     	<div>
    			 <div class="header">
-				<img src="/public/image/<?php echo ($product["image"]); ?>" id="headimg">
+				<img src="<?php echo ($product["imgbg"]); ?>" id="headimg">
 
 					<div class="headtext">
 						<h1><?php echo ($product["name"]); ?></h1>
@@ -64,7 +64,7 @@
   			  		</div>
   			  		<div class="companyinfo" style="height:110px;">
   		
-  			  		  <img class="am-circle companyimg" src="/public/image/<?php echo ($company["image"]); ?>" width="90" height="90" style="border:1px solid #D1D2D3;" />
+  			  		  <img class="am-circle companyimg" src="<?php echo ($company["image"]); ?>" width="90" height="90" style="border:1px solid #D1D2D3;" />
   			  		
   			  		<div class= "companyname">
   			  		  <h2>

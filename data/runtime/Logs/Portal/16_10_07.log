@@ -172,3 +172,39 @@ NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
 [ 2016-10-07T21:25:35+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=index
 NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
 
+[ 2016-10-07T22:27:57+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-07T22:28:26+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-07T22:29:52+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-07T22:30:30+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-07T22:30:37+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-07T22:31:03+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-07T22:32:33+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-07T22:32:34+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-07T22:41:09+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-07T22:45:25+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-07T22:45:42+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-07T22:45:59+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+

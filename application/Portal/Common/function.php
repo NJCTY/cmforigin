@@ -17,6 +17,12 @@
  *	where:查询条件，字符串形式，和sql语句一样
  * @param array $where 查询条件，（暂只支持数组），格式和thinkphp where方法一样；
  */
+function getcompanycode($id){
+	$result = M('company') ->where("admincode = '".$id."'")->select();
+	return $result[0]['code'];
+}
+
+
 function sp_sql_posts($tag,$where=array()){
 	if(!is_array($where)){
 		$where=array();

@@ -4,72 +4,93 @@
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
 			<li><a href="{:U('AdminPage/index')}">{:L('PORTAL_ADMINPAGE_INDEX')}</a></li>
-			<li class="active"><a href="{:U('AdminPage/add')}">{:L('PORTAL_ADMINPAGE_ADD')}</a></li>
+			<li class="active"><a href="{:U('AdminPage/add')}">添加产品</a></li>
 		</ul>
 		<form action="{:U('AdminPage/add_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
-			<input type="hidden" name="post[post_type]" value="2">
 			<div class="row-fluid">
 				<div class="span9">
 					<table class="table table-bordered">
 						<tr>
-							<th width="80">标题</th>
+							<th width="80">产品名称</th>
 							<td>
-								<input type="text" style="width: 400px;" name="post[post_title]" id="title" value="" placeholder="请输入标题"/>
+								<input type="text" style="width: 200px;" name="name" id="title" value="" placeholder="请输入产品名称"/>
 								<span class="form-required">*</span>
 							</td>
 						</tr>
 						<tr>
-							<th>模版</th>
+							<th width="90">产品背景图片</th>
 							<td>
-								<php>
-								$tpl_list=sp_admin_get_tpl_file_list();
-								unset($tpl_list['page']);
-								</php> 
-								<select style="min-width: 290px;" name="smeta[template]">
-									<option value="page">page{:C("TMPL_TEMPLATE_SUFFIX")}</option>
-									<foreach name="tpl_list" item="vo">
-									<option value="{$vo}">{$vo}{:C("TMPL_TEMPLATE_SUFFIX")}</option>
-									</foreach>
-								</select>
+								<input type="file" name="imgbg"/>
 							</td>
 						</tr>
 						<tr>
-							<th>关键词</th>
-							<td><input type="text" name="post[post_keywords]" id="keywords" value="" style="width: 280px" placeholder="请输入关键字"> 多关键词之间用空格隔开</td>
-						</tr>
-						<tr>
-							<th>摘要</th>
-							<td><textarea name="post[post_excerpt]" id="description" style='width: 98%; height: 200px;'></textarea></td>
-						</tr>
-						<tr>
-							<th>内容</th>
+							<th width="80">产品图片一</th>
 							<td>
-								<script type="text/plain" id="content" name="post[post_content]"></script>
+								<input type="file" name="imgone"/>
+							</td>
+						</tr>
+						<tr>
+							<th width="80">产品图片二</th>
+							<td>
+								<input type="file" name="imgtwo"/>
+							</td>
+						</tr>
+						<tr>
+							<th width="80">产品图片三</th>
+							<td>
+								<input type="file" name="imgthree"/>
+							</td>
+						</tr>
+						<tr>
+							<th width="80">产品图片四</th>
+							<td>
+								<input type="file" name="imgfour"/>
+							</td>
+						</tr>
+
+						<tr>
+							<th>使用的农药</th>
+							<td><input type="text" name="nongyao" style="width: 200px" placeholder="请输入农药"> 农药之间用","隔开，无农药请输入"0"</td>
+						</tr>
+						<tr>
+							<th>使用的化肥</th>
+							<td><input type="text" name="huafei" style="width: 200px" placeholder="请输入化肥"> 化肥之间用","隔开,无化肥请输入"0"</td>
+						</tr>
+						<tr>
+							<th>光照时长</th>
+							<td><input type="text" name="guangzhao" style="width: 200px" placeholder="请输入光照数据"> 数据之间用","隔开</td>
+						</tr>
+						<tr>
+							<th>平均气温</th>
+							<td><input type="text" name="qiwen" style="width: 200px" placeholder="请输入气温数据"> 数据之间用","隔开</td>
+						</tr>
+							<th width="80">种苗名称</th>
+							<td>
+								<input type="text" style="width: 200px;" name="kindname" id="title" value="" placeholder="请输入种苗名称"/>
+								<span class="form-required">*</span>
+							</td>
+						</tr>
+							<th width="80">生长期和产地信息</th>
+							<td>
+								<input type="text" style="width: 200px;" name="kindtime" id="title" value="" placeholder="请输入生长期和产地信息"/>
+								<span class="form-required">*</span>
+							</td>
+						</tr>
+						<tr>
+							<th>种苗介绍</th>
+							<td><textarea name="kindintroduction" style="width: 98%; height: 50px;">{$post.post_excerpt}</textarea>
 							</td>
 						</tr>
 					</table>
 				</div>
 				<div class="span3">
 					<table class="table table-bordered">
-						<tr>
-							<th>缩略图</th>
-						</tr>
-						<tr>
-							<td>
-								<div style="text-align: center;">
-									<input type="hidden" name="smeta[thumb]" id="thumb" value="">
-									<a href="javascript:void(0);" onclick="flashupload('thumb_images', '附件上传','thumb',thumb_images,'1,jpg|jpeg|gif|png|bmp,1,,,1','','','');return false;">
-										<img src="__TMPL__Public/assets/images/default-thumbnail.png" id="thumb_preview" width="135" style="cursor: hand"/>
-									</a>
-									<input type="button" class="btn btn-small" onclick="$('#thumb_preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');$('#thumb').val('');return false;" value="取消图片">
-								</div>
-							</td>
-						</tr>
+						
 						<tr>
 							<th>发布时间</th>
 						</tr>
 						<tr>
-							<td><input type="text" name="post[post_modified]" value="{:date('Y-m-d H:i:s',time())}" class="js-datetime"></td>
+							<td><input type="text" name="time" value="{:date('Y-m-d H:i:s',time())}" class="js-datetime"></td>
 						</tr>
 						<tr>
 							<th>状态</th>

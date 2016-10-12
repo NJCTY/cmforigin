@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.10
+-- version 4.4.11
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2016-09-26 09:37:03
--- 服务器版本： 5.6.11
--- PHP Version: 5.5.1
+-- Generation Time: 2016-10-12 10:21:57
+-- 服务器版本： 10.1.10-MariaDB
+-- PHP Version: 7.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -65,6 +65,91 @@ CREATE TABLE IF NOT EXISTS `check_auth_access` (
   `type` varchar(30) DEFAULT NULL COMMENT '权限规则分类，请加应用前缀,如admin_'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='权限授权表';
 
+--
+-- 转存表中的数据 `check_auth_access`
+--
+
+INSERT INTO `check_auth_access` (`role_id`, `rule_name`, `type`) VALUES
+(2, 'admin/content/default', 'admin_url'),
+(2, 'api/guestbookadmin/index', 'admin_url'),
+(2, 'api/guestbookadmin/delete', 'admin_url'),
+(2, 'comment/commentadmin/index', 'admin_url'),
+(2, 'comment/commentadmin/delete', 'admin_url'),
+(2, 'comment/commentadmin/check', 'admin_url'),
+(2, 'portal/adminpost/index', 'admin_url'),
+(2, 'portal/adminpost/listorders', 'admin_url'),
+(2, 'portal/adminpost/top', 'admin_url'),
+(2, 'portal/adminpost/recommend', 'admin_url'),
+(2, 'portal/adminpost/move', 'admin_url'),
+(2, 'portal/adminpost/check', 'admin_url'),
+(2, 'portal/adminpost/delete', 'admin_url'),
+(2, 'portal/adminpost/edit', 'admin_url'),
+(2, 'portal/adminpost/edit_post', 'admin_url'),
+(2, 'portal/adminpost/add', 'admin_url'),
+(2, 'portal/adminpost/add_post', 'admin_url'),
+(2, 'portal/adminterm/index', 'admin_url'),
+(2, 'portal/adminterm/listorders', 'admin_url'),
+(2, 'portal/adminterm/delete', 'admin_url'),
+(2, 'portal/adminterm/edit', 'admin_url'),
+(2, 'portal/adminterm/edit_post', 'admin_url'),
+(2, 'portal/adminterm/add', 'admin_url'),
+(2, 'portal/adminterm/add_post', 'admin_url'),
+(2, 'portal/adminpage/index', 'admin_url'),
+(2, 'portal/adminpage/listorders', 'admin_url'),
+(2, 'portal/adminpage/delete', 'admin_url'),
+(2, 'portal/adminpage/edit', 'admin_url'),
+(2, 'portal/adminpage/edit_post', 'admin_url'),
+(2, 'portal/adminpage/add', 'admin_url'),
+(2, 'portal/adminpage/add_post', 'admin_url'),
+(2, 'admin/recycle/default', 'admin_url'),
+(2, 'portal/adminpost/recyclebin', 'admin_url'),
+(2, 'portal/adminpost/restore', 'admin_url'),
+(2, 'portal/adminpost/clean', 'admin_url'),
+(2, 'portal/adminpage/recyclebin', 'admin_url'),
+(2, 'portal/adminpage/clean', 'admin_url'),
+(2, 'portal/adminpage/restore', 'admin_url'),
+(3, 'portal/adminpage/edit_post', 'admin_url'),
+(3, 'portal/adminpage/edit', 'admin_url'),
+(3, 'portal/adminpage/delete', 'admin_url'),
+(3, 'portal/adminpage/listorders', 'admin_url'),
+(3, 'portal/adminpage/index', 'admin_url'),
+(3, 'portal/adminterm/add_post', 'admin_url'),
+(3, 'portal/adminterm/add', 'admin_url'),
+(3, 'portal/adminterm/edit_post', 'admin_url'),
+(3, 'portal/adminterm/edit', 'admin_url'),
+(3, 'portal/adminterm/delete', 'admin_url'),
+(3, 'portal/adminterm/listorders', 'admin_url'),
+(3, 'portal/adminterm/index', 'admin_url'),
+(3, 'portal/adminpost/add_post', 'admin_url'),
+(3, 'portal/adminpost/add', 'admin_url'),
+(3, 'portal/adminpost/edit_post', 'admin_url'),
+(3, 'portal/adminpost/edit', 'admin_url'),
+(3, 'portal/adminpost/delete', 'admin_url'),
+(3, 'portal/adminpost/check', 'admin_url'),
+(3, 'portal/adminpost/move', 'admin_url'),
+(3, 'portal/adminpost/recommend', 'admin_url'),
+(3, 'portal/adminpost/top', 'admin_url'),
+(3, 'portal/adminpost/listorders', 'admin_url'),
+(3, 'portal/adminpost/index', 'admin_url'),
+(3, 'comment/commentadmin/check', 'admin_url'),
+(3, 'comment/commentadmin/delete', 'admin_url'),
+(3, 'comment/commentadmin/index', 'admin_url'),
+(3, 'api/guestbookadmin/delete', 'admin_url'),
+(3, 'api/guestbookadmin/index', 'admin_url'),
+(3, 'admin/content/default', 'admin_url'),
+(3, 'portal/adminpage/add', 'admin_url'),
+(3, 'portal/adminpage/add_post', 'admin_url'),
+(3, 'admin/recycle/default', 'admin_url'),
+(3, 'portal/adminpost/recyclebin', 'admin_url'),
+(3, 'portal/adminpost/restore', 'admin_url'),
+(3, 'portal/adminpost/clean', 'admin_url'),
+(3, 'portal/adminpage/recyclebin', 'admin_url'),
+(3, 'portal/adminpage/clean', 'admin_url'),
+(3, 'portal/adminpage/restore', 'admin_url'),
+(3, 'portal/adminpage/qrcode', 'admin_url'),
+(3, 'portal/adminpage/companyinfo', 'admin_url'),
+(3, 'portal/adminpage/post', 'admin_url');
+
 -- --------------------------------------------------------
 
 --
@@ -80,14 +165,14 @@ CREATE TABLE IF NOT EXISTS `check_auth_rule` (
   `title` varchar(20) NOT NULL DEFAULT '' COMMENT '规则中文描述',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否有效(0:无效,1:有效)',
   `condition` varchar(300) NOT NULL DEFAULT '' COMMENT '规则附加条件'
-) ENGINE=MyISAM AUTO_INCREMENT=162 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
+) ENGINE=MyISAM AUTO_INCREMENT=166 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
 
 --
 -- 转存表中的数据 `check_auth_rule`
 --
 
 INSERT INTO `check_auth_rule` (`id`, `module`, `type`, `name`, `param`, `title`, `status`, `condition`) VALUES
-(1, 'Admin', 'admin_url', 'admin/content/default', NULL, '内容管理', 1, ''),
+(1, 'Admin', 'admin_url', 'admin/content/default', NULL, '产品管理', 1, ''),
 (2, 'Api', 'admin_url', 'api/guestbookadmin/index', NULL, '所有留言', 1, ''),
 (3, 'Api', 'admin_url', 'api/guestbookadmin/delete', NULL, '删除网站留言', 1, ''),
 (4, 'Comment', 'admin_url', 'comment/commentadmin/index', NULL, '评论管理', 1, ''),
@@ -111,7 +196,7 @@ INSERT INTO `check_auth_rule` (`id`, `module`, `type`, `name`, `param`, `title`,
 (22, 'Portal', 'admin_url', 'portal/adminterm/edit_post', NULL, '提交编辑', 1, ''),
 (23, 'Portal', 'admin_url', 'portal/adminterm/add', NULL, '添加分类', 1, ''),
 (24, 'Portal', 'admin_url', 'portal/adminterm/add_post', NULL, '提交添加', 1, ''),
-(25, 'Portal', 'admin_url', 'portal/adminpage/index', NULL, '页面管理', 1, ''),
+(25, 'Portal', 'admin_url', 'portal/adminpage/index', NULL, '产品信息管理', 1, ''),
 (26, 'Portal', 'admin_url', 'portal/adminpage/listorders', NULL, '页面排序', 1, ''),
 (27, 'Portal', 'admin_url', 'portal/adminpage/delete', NULL, '删除页面', 1, ''),
 (28, 'Portal', 'admin_url', 'portal/adminpage/edit', NULL, '编辑页面', 1, ''),
@@ -247,7 +332,11 @@ INSERT INTO `check_auth_rule` (`id`, `module`, `type`, `name`, `param`, `title`,
 (158, 'Admin', 'admin_url', 'admin/slide/ban', NULL, '禁用幻灯片', 1, ''),
 (159, 'Admin', 'admin_url', 'admin/slide/cancelban', NULL, '启用幻灯片', 1, ''),
 (160, 'Admin', 'admin_url', 'admin/user/ban', NULL, '禁用管理员', 1, ''),
-(161, 'Admin', 'admin_url', 'admin/user/cancelban', NULL, '启用管理员', 1, '');
+(161, 'Admin', 'admin_url', 'admin/user/cancelban', NULL, '启用管理员', 1, ''),
+(162, 'Admin', 'admin_url', 'admin/content/companyinfo', NULL, '公司信息管理', 1, ''),
+(163, 'Portal', 'admin_url', 'portal/adminpage/companyinfo', NULL, '公司信息管理', 1, ''),
+(164, 'Portal', 'admin_url', 'portal/adminpage/post', NULL, '添加修改公司信息', 1, ''),
+(165, 'Portal', 'admin_url', 'portal/adminpage/qrcode', NULL, '生成二维码', 1, '');
 
 -- --------------------------------------------------------
 
@@ -296,21 +385,25 @@ CREATE TABLE IF NOT EXISTS `check_common_action_log` (
 
 CREATE TABLE IF NOT EXISTS `check_company` (
   `com_id` int(11) NOT NULL,
-  `code` varchar(255) NOT NULL,
+  `code` int(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `money` varchar(255) NOT NULL,
   `introduction` text NOT NULL,
   `image` mediumtext NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `admincode` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 --
 -- 转存表中的数据 `check_company`
 --
 
-INSERT INTO `check_company` (`com_id`, `code`, `name`, `money`, `introduction`, `image`, `timestamp`) VALUES
-(1, '10000', '南京邮电大学', '28000万元', '南京邮电大学是一个厉害的学校。', 'njupt.jpg', '2016-09-25 14:18:09'),
-(2, '10001', '南邮校科协', '0元', '哈哈哈哈哈哈哈哈哈哈哈哈', '', '2016-09-25 14:18:09');
+INSERT INTO `check_company` (`com_id`, `code`, `name`, `money`, `introduction`, `image`, `timestamp`, `admincode`) VALUES
+(1, 10000, '南京邮电大学', '28000万元', '南京邮电大学是一个厉害的学校。', 'http://127.0.0.1/Uploads/2016-10-07/57f7b20173b73.jpg', '2016-09-25 14:18:09', 3),
+(2, 10001, '南邮校科协', '0元', '哈哈哈哈哈哈哈哈哈哈哈哈', '', '2016-09-25 14:18:09', 0),
+(3, 0, '11', '22', '33', '', '2016-10-06 12:24:24', 0),
+(4, 0, 'ceshi1', 'ceshi', 'ceshi', 'http://127.0.0.1/Uploads/2016-10-07/57f7b18de3911.jpg', '2016-10-06 12:37:20', 1),
+(8, 10007, '123123', '2323', '12323', '', '2016-10-06 12:58:27', 4);
 
 -- --------------------------------------------------------
 
@@ -373,20 +466,20 @@ CREATE TABLE IF NOT EXISTS `check_menu` (
   `icon` varchar(50) DEFAULT NULL COMMENT '菜单图标',
   `remark` varchar(255) NOT NULL COMMENT '备注',
   `listorder` smallint(6) unsigned NOT NULL DEFAULT '0' COMMENT '排序ID'
-) ENGINE=MyISAM AUTO_INCREMENT=162 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
+) ENGINE=MyISAM AUTO_INCREMENT=165 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
 
 --
 -- 转存表中的数据 `check_menu`
 --
 
 INSERT INTO `check_menu` (`id`, `parentid`, `app`, `model`, `action`, `data`, `type`, `status`, `name`, `icon`, `remark`, `listorder`) VALUES
-(1, 0, 'Admin', 'Content', 'default', '', 0, 1, '内容管理', 'th', '', 30),
-(2, 1, 'Api', 'Guestbookadmin', 'index', '', 1, 1, '所有留言', '', '', 0),
+(1, 0, 'Admin', 'Content', 'default', '', 0, 1, '产品管理', 'th', '', 30),
+(2, 1, 'Api', 'Guestbookadmin', 'index', '', 1, 0, '所有留言', '', '', 3),
 (3, 2, 'Api', 'Guestbookadmin', 'delete', '', 1, 0, '删除网站留言', '', '', 0),
-(4, 1, 'Comment', 'Commentadmin', 'index', '', 1, 1, '评论管理', '', '', 0),
+(4, 1, 'Comment', 'Commentadmin', 'index', '', 1, 0, '评论管理', '', '', 0),
 (5, 4, 'Comment', 'Commentadmin', 'delete', '', 1, 0, '删除评论', '', '', 0),
 (6, 4, 'Comment', 'Commentadmin', 'check', '', 1, 0, '评论审核', '', '', 0),
-(7, 1, 'Portal', 'AdminPost', 'index', '', 1, 1, '文章管理', '', '', 1),
+(7, 1, 'Portal', 'AdminPost', 'index', '', 1, 0, '文章管理', '', '', 1),
 (8, 7, 'Portal', 'AdminPost', 'listorders', '', 1, 0, '文章排序', '', '', 0),
 (9, 7, 'Portal', 'AdminPost', 'top', '', 1, 0, '文章置顶', '', '', 0),
 (10, 7, 'Portal', 'AdminPost', 'recommend', '', 1, 0, '文章推荐', '', '', 0),
@@ -397,21 +490,21 @@ INSERT INTO `check_menu` (`id`, `parentid`, `app`, `model`, `action`, `data`, `t
 (15, 14, 'Portal', 'AdminPost', 'edit_post', '', 1, 0, '提交编辑', '', '', 0),
 (16, 7, 'Portal', 'AdminPost', 'add', '', 1, 0, '添加文章', '', '', 1000),
 (17, 16, 'Portal', 'AdminPost', 'add_post', '', 1, 0, '提交添加', '', '', 0),
-(18, 1, 'Portal', 'AdminTerm', 'index', '', 0, 1, '分类管理', '', '', 2),
+(18, 1, 'Portal', 'AdminTerm', 'index', '', 0, 0, '分类管理', '', '', 2),
 (19, 18, 'Portal', 'AdminTerm', 'listorders', '', 1, 0, '文章分类排序', '', '', 0),
 (20, 18, 'Portal', 'AdminTerm', 'delete', '', 1, 0, '删除分类', '', '', 1000),
 (21, 18, 'Portal', 'AdminTerm', 'edit', '', 1, 0, '编辑分类', '', '', 1000),
 (22, 21, 'Portal', 'AdminTerm', 'edit_post', '', 1, 0, '提交编辑', '', '', 0),
 (23, 18, 'Portal', 'AdminTerm', 'add', '', 1, 0, '添加分类', '', '', 1000),
 (24, 23, 'Portal', 'AdminTerm', 'add_post', '', 1, 0, '提交添加', '', '', 0),
-(25, 1, 'Portal', 'AdminPage', 'index', '', 1, 1, '页面管理', '', '', 3),
+(25, 1, 'Portal', 'AdminPage', 'index', '', 1, 1, '产品信息管理', '', '', 0),
 (26, 25, 'Portal', 'AdminPage', 'listorders', '', 1, 0, '页面排序', '', '', 0),
 (27, 25, 'Portal', 'AdminPage', 'delete', '', 1, 0, '删除页面', '', '', 1000),
 (28, 25, 'Portal', 'AdminPage', 'edit', '', 1, 0, '编辑页面', '', '', 1000),
 (29, 28, 'Portal', 'AdminPage', 'edit_post', '', 1, 0, '提交编辑', '', '', 0),
 (30, 25, 'Portal', 'AdminPage', 'add', '', 1, 0, '添加页面', '', '', 1000),
 (31, 30, 'Portal', 'AdminPage', 'add_post', '', 1, 0, '提交添加', '', '', 0),
-(32, 1, 'Admin', 'Recycle', 'default', '', 1, 1, '回收站', '', '', 4),
+(32, 1, 'Admin', 'Recycle', 'default', '', 1, 0, '回收站', '', '', 4),
 (33, 32, 'Portal', 'AdminPost', 'recyclebin', '', 1, 1, '文章回收', '', '', 0),
 (34, 33, 'Portal', 'AdminPost', 'restore', '', 1, 0, '文章还原', '', '', 1000),
 (35, 33, 'Portal', 'AdminPost', 'clean', '', 1, 0, '彻底删除', '', '', 1000),
@@ -540,7 +633,10 @@ INSERT INTO `check_menu` (`id`, `parentid`, `app`, `model`, `action`, `data`, `t
 (158, 54, 'Admin', 'Slide', 'ban', '', 1, 0, '禁用幻灯片', '', '', 0),
 (159, 54, 'Admin', 'Slide', 'cancelban', '', 1, 0, '启用幻灯片', '', '', 0),
 (160, 149, 'Admin', 'User', 'ban', '', 1, 0, '禁用管理员', '', '', 0),
-(161, 149, 'Admin', 'User', 'cancelban', '', 1, 0, '启用管理员', '', '', 0);
+(161, 149, 'Admin', 'User', 'cancelban', '', 1, 0, '启用管理员', '', '', 0),
+(162, 0, 'Portal', 'AdminPage', 'companyinfo', '', 1, 1, '公司信息管理', '', '', 0),
+(163, 162, 'Portal', 'AdminPage', 'post', '', 1, 0, '添加修改公司信息', '', '', 0),
+(164, 1, 'Portal', 'AdminPage', 'qrcode', '', 1, 1, '生成二维码', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -683,7 +779,14 @@ CREATE TABLE IF NOT EXISTS `check_posts` (
   `post_like` int(11) DEFAULT '0' COMMENT 'post赞数',
   `istop` tinyint(1) NOT NULL DEFAULT '0' COMMENT '置顶 1置顶； 0不置顶',
   `recommended` tinyint(1) NOT NULL DEFAULT '0' COMMENT '推荐 1推荐 0不推荐'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Portal文章表';
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Portal文章表';
+
+--
+-- 转存表中的数据 `check_posts`
+--
+
+INSERT INTO `check_posts` (`id`, `post_author`, `post_keywords`, `post_source`, `post_date`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `post_modified`, `post_content_filtered`, `post_parent`, `post_type`, `post_mime_type`, `comment_count`, `smeta`, `post_hits`, `post_like`, `istop`, `recommended`) VALUES
+(1, 1, '', NULL, '2016-10-02 20:34:17', '<p>123</p>', '123', '123', 1, 1, '2016-10-02 20:34:13', NULL, 0, 2, '', 0, '{"template":"page","thumb":""}', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -696,15 +799,31 @@ CREATE TABLE IF NOT EXISTS `check_product` (
   `productcode` varchar(32) NOT NULL,
   `companycode` varchar(32) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `image` varchar(1000) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+  `image` varchar(1000) NOT NULL,
+  `kindname` varchar(255) NOT NULL,
+  `kindtime` varchar(255) NOT NULL,
+  `kindintroduction` mediumtext NOT NULL,
+  `kindimage` varchar(255) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `nongyao` varchar(255) NOT NULL,
+  `huafei` varchar(255) NOT NULL,
+  `guangzhao` varchar(255) NOT NULL,
+  `qiwen` varchar(255) NOT NULL,
+  `imgbg` varchar(255) NOT NULL,
+  `imgone` varchar(255) NOT NULL,
+  `imgtwo` varchar(255) NOT NULL,
+  `imgthree` varchar(255) NOT NULL,
+  `imgfour` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 --
 -- 转存表中的数据 `check_product`
 --
 
-INSERT INTO `check_product` (`product_id`, `productcode`, `companycode`, `name`, `image`) VALUES
-(1, '2048', '10000', '土豆', 'tudou.jpg');
+INSERT INTO `check_product` (`product_id`, `productcode`, `companycode`, `name`, `image`, `kindname`, `kindtime`, `kindintroduction`, `kindimage`, `timestamp`, `nongyao`, `huafei`, `guangzhao`, `qiwen`, `imgbg`, `imgone`, `imgtwo`, `imgthree`, `imgfour`) VALUES
+(1, '2048', '10000', '土豆', 'tudou.jpg', '底西瑞', '生长期：110天 原产地：荷兰', '植株半直立，分枝少，株高55-60厘米，分枝4-5个，叶片小而坚实。侧小叶4-5对，叶色灰绿，生长势强，茎粗壯，有明显的棕红色。花冠紫红色，花粉多，天然果较多，结薯集中4-5块，薯块大，生育期105-110天。产量一般亩产1700公斤，最高亩产2500-3000公斤。', 'kindtudou.png', '2016-10-02 13:03:39', '22', '22', '', '', 'http://127.0.0.1/Uploads/2016-10-11/57fc8278329fc.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc82783325c.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc82783349d.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc827833747.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc827833ade.jpg'),
+(3, '1003', '10000', '西瓜', '', '早佳8424', '产地:东台', '早佳8424，开花至果实成熟28至45天左右，生长势中等，座果性好。果实圆形，绿皮上覆墨绿窄条带，外形美观，红瓤，质脆口感极佳，中心含糖11-12度。耐贮运。合理密植，，适于双蔓整枝或三蔓整枝，喜肥沃土壤，适度灌溉。适于早熟地膜覆盖及露地栽培，花期遇雨应进行人工辅助授粉，九成熟时采收为宜。上市时间4月中旬至10月上旬。适宜各地栽培，极适合长江流域栽培。采瓜前3天不宜浇水，以防裂瓜和降低糖度，并请参考当地栽培习惯。', '', '2016-10-11 05:10:09', 'nongyao', 'huafei', 'gongzhao', 'qiwen', 'http://127.0.0.1/Uploads/2016-10-11/57fc837b70c6c.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc840875ce3.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc841dd438c.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc841dd45be.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc841dd4785.jpg'),
+(4, '1004', '10000', '葡萄', '', '水晶葡萄', '产地:南京', '水晶葡萄是是是是', '', '2016-10-11 05:13:38', 'hahah', '233', '23121', 'jew2', 'http://127.0.0.1/Uploads/2016-10-11/57fc750289d4f.jpg', 'http://127.0.0.1/Uploads/', 'http://127.0.0.1/Uploads/', 'http://127.0.0.1/Uploads/', 'http://127.0.0.1/Uploads/');
 
 -- --------------------------------------------------------
 
@@ -721,7 +840,7 @@ CREATE TABLE IF NOT EXISTS `check_role` (
   `create_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
   `update_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
   `listorder` int(3) NOT NULL DEFAULT '0' COMMENT '排序字段'
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='角色表';
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='角色表';
 
 --
 -- 转存表中的数据 `check_role`
@@ -729,7 +848,8 @@ CREATE TABLE IF NOT EXISTS `check_role` (
 
 INSERT INTO `check_role` (`id`, `name`, `pid`, `status`, `remark`, `create_time`, `update_time`, `listorder`) VALUES
 (1, '超级管理员', 0, 1, '拥有网站最高管理员权限！', 1329633709, 1329633709, 0),
-(2, '政府管理员', NULL, 1, '', 1474523403, 0, 0);
+(2, '政府管理员', NULL, 1, '', 1474523403, 0, 0),
+(3, '公司管理员', NULL, 1, '', 1475410154, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -741,6 +861,14 @@ CREATE TABLE IF NOT EXISTS `check_role_user` (
   `role_id` int(11) unsigned DEFAULT '0' COMMENT '角色 id',
   `user_id` int(11) DEFAULT '0' COMMENT '用户id'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='用户角色对应表';
+
+--
+-- 转存表中的数据 `check_role_user`
+--
+
+INSERT INTO `check_role_user` (`role_id`, `user_id`) VALUES
+(3, 3),
+(3, 4);
 
 -- --------------------------------------------------------
 
@@ -860,15 +988,17 @@ CREATE TABLE IF NOT EXISTS `check_users` (
   `user_type` smallint(1) DEFAULT '1' COMMENT '用户类型，1:admin ;2:会员',
   `coin` int(11) NOT NULL DEFAULT '0' COMMENT '金币',
   `mobile` varchar(20) NOT NULL DEFAULT '' COMMENT '手机号'
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 --
 -- 转存表中的数据 `check_users`
 --
 
 INSERT INTO `check_users` (`id`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `avatar`, `sex`, `birthday`, `signature`, `last_login_ip`, `last_login_time`, `create_time`, `user_activation_key`, `user_status`, `score`, `user_type`, `coin`, `mobile`) VALUES
-(1, 'admin', '###d2df176462c29cba4dcbdd421729547a', 'admin', 'B15011828@njupt.edu.cn', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-09-22 13:49:42', '2016-09-20 03:29:36', '', 1, 0, 1, 0, ''),
-(2, 'ctygood_vip_qq_com', '###d2df176462c29cba4dcbdd421729547a', 'ctygood_vip_qq_com', 'ctygood@vip.qq.com', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-09-22 13:49:22', '2016-09-22 13:49:22', '', 1, 0, 2, 0, '');
+(1, 'admin', '###d2df176462c29cba4dcbdd421729547a', 'admin', 'B15011828@njupt.edu.cn', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-10-11 14:25:48', '2016-09-20 03:29:36', '', 1, 0, 1, 0, ''),
+(2, 'ctygood_vip_qq_com', '###d2df176462c29cba4dcbdd421729547a', 'ctygood_vip_qq_com', 'ctygood@vip.qq.com', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-09-22 13:49:22', '2016-09-22 13:49:22', '', 1, 0, 2, 0, ''),
+(3, 'njupt', '###d2df176462c29cba4dcbdd421729547a', '', 'ctygood@gmail.com', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-10-11 14:27:00', '2016-10-06 15:58:05', '', 1, 0, 1, 0, ''),
+(4, 'addtest', '###d2df176462c29cba4dcbdd421729547a', '', '222@22.com', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-10-06 20:53:09', '2016-10-06 20:52:18', '', 1, 0, 1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -1093,7 +1223,7 @@ ALTER TABLE `check_asset`
 -- AUTO_INCREMENT for table `check_auth_rule`
 --
 ALTER TABLE `check_auth_rule`
-  MODIFY `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '规则id,自增主键',AUTO_INCREMENT=162;
+  MODIFY `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '规则id,自增主键',AUTO_INCREMENT=166;
 --
 -- AUTO_INCREMENT for table `check_comments`
 --
@@ -1108,7 +1238,7 @@ ALTER TABLE `check_common_action_log`
 -- AUTO_INCREMENT for table `check_company`
 --
 ALTER TABLE `check_company`
-  MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `check_guestbook`
 --
@@ -1123,7 +1253,7 @@ ALTER TABLE `check_links`
 -- AUTO_INCREMENT for table `check_menu`
 --
 ALTER TABLE `check_menu`
-  MODIFY `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=162;
+  MODIFY `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=165;
 --
 -- AUTO_INCREMENT for table `check_nav`
 --
@@ -1153,17 +1283,17 @@ ALTER TABLE `check_plugins`
 -- AUTO_INCREMENT for table `check_posts`
 --
 ALTER TABLE `check_posts`
-  MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `check_product`
 --
 ALTER TABLE `check_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `check_role`
 --
 ALTER TABLE `check_role`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `check_route`
 --
@@ -1193,7 +1323,7 @@ ALTER TABLE `check_term_relationships`
 -- AUTO_INCREMENT for table `check_users`
 --
 ALTER TABLE `check_users`
-  MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `check_user_favorites`
 --

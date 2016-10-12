@@ -24,7 +24,7 @@ class AdminPageController extends AdminbaseController {
 	}
 	//文件上传函数
 	function imgupload(){
-            $upload = new \Think\Upload();// 实例化上传类
+    $upload = new \Think\Upload();// 实例化上传类
     $upload->maxSize   =     3145728 ;// 设置附件上传大小
     $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
     $upload->rootPath  =      './Uploads/'; // 设置附件上传根目录
@@ -81,9 +81,9 @@ class AdminPageController extends AdminbaseController {
 		$cominfo = $dbcompany -> where('admincode ='.$admincode) ->select();
 		$db = M('product');
 		$posts = $db ->where("companycode = '".$cominfo[0]['code']."'")->select();
-
 		$this->assign("posts",$posts);
 		$this->assign("name",$cominfo[0]['name']);
+		$this->assign("code",$cominfo[0]['code']);
 		$this->display();
 	}
 
@@ -149,14 +149,41 @@ class AdminPageController extends AdminbaseController {
 	
 	function add_post(){
 		if (IS_POST) {
-			$_POST['smeta']['thumb'] = sp_asset_relative_url($_POST['smeta']['thumb']);
-			$_POST['post']['post_date']=date("Y-m-d H:i:s",time());
-			$_POST['post']['post_author']=get_current_admin_id();
-			$page=I("post.post");
-			$page['smeta']=json_encode($_POST['smeta']);
-			$page['post_content']=htmlspecialchars_decode($page['post_content']);
-			$result=$this->posts_model->add($page);
-			if ($result) {
+		$upload = new \Think\Upload();// 实例化上传类
+	    $upload->maxSize   =     3145728 ;// 设置附件上传大小
+  		$upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+	    $upload->rootPath  =      './Uploads/'; // 设置附件上传根目录
+    	$upload->savePath  =      ''; // 设置附件上传（子）目录
+    // 上传文件 
+    	$file   =   $upload->upload();
+    if(!$file) {// 上传错误提示错误信息
+            $this->error($upload->getError());
+        }
+        else{
+       		$data['imgbg'] ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['imgbg']['savepath'].$file['imgbg']['savename'];
+        	$data['imgone'] ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['imgone']['savepath'].$file['imgone']['savename'];
+        	$data['imgtwo'] ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['imgtwo']['savepath'].$file['imgtwo']['savename'];
+			$data['imgthree'] ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['imgthree']['savepath'].$file['imgthree']['savename'];
+       		$data['imgfour'] ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['imgfour']['savepath'].$file['imgfour']['savename'];
+	    }
+	$data['name'] = $_POST['name'];
+	$data['nongyao'] = $_POST['nongyao'];
+	$data['huafei'] = $_POST['huafei'];
+	$data['guangzhao'] = $_POST['guangzhao'];
+	$data['qiwen'] = $_POST['qiwen'];
+	$data['kindname'] = $_POST['kindname'];
+	$data['kindtime'] = $_POST['kindtime'];
+	$data['kindintroduction'] = $_POST['kindintroduction'];
+	$id = M('product') -> max('product_id');
+	$data['productcode'] = $id + 1 + 1000;
+	$data['companycode'] = getcompanycode(sp_get_current_admin_id());
+
+	if($db = M('product') -> data($data) ->add()){
+		$isdone = 1;
+	}else{
+		$isdone =0;
+	}
+		if ($isdone == 1) {
 				$this->success("添加成功！");
 			} else {
 				$this->error("添加失败！");
@@ -165,59 +192,95 @@ class AdminPageController extends AdminbaseController {
 	}
 	
 	public function edit(){
-		$terms_obj = M("Terms");
-		$term_id = intval(I("get.term")); 
-		$id= intval(I("get.id"));
-		$term=$terms_obj->where("term_id=$term_id")->find();
-		$post=$this->posts_model->where("id=$id")->find();
-		$this->assign("post",$post);
-		$this->assign("smeta",json_decode($post['smeta'],true));
-			
-		$this->assign("author","1");
-		$this->assign("term",$term);
+		$code = codecheck(); //分解条码
+		$info = M('product') ->where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'") -> select();
+		$this->assign('info',$info[0]);
+		$this->assign('companycode',$code['companycode']);
+		$this->assign('productcode',$code['productcode']);
 		$this->display();
 	}
 	
+	public function qrcode($level=3,$size=4)
+  {
+  	$url = $_GET['url'];
+       Vendor('phpqrcode.phpqrcode');
+       $errorCorrectionLevel =intval($level) ;//容错级别 
+       $matrixPointSize = intval($size);//生成图片大小 
+       //生成二维码图片 
+       $object = new \QRcode();
+       $object->png($url, false, $errorCorrectionLevel, $matrixPointSize, 2);  
+  }
+
 	public function edit_post(){
-		$terms_obj = D("Portal/Terms");
-	
 		if (IS_POST) {
-			$_POST['smeta']['thumb'] = sp_asset_relative_url($_POST['smeta']['thumb']);
-			
-			unset($_POST['post']['post_author']);
-			$page=I("post.post");
-			$page['smeta']=json_encode($_POST['smeta']);
-			$page['post_content']=htmlspecialchars_decode($page['post_content']);
-			$result=$this->posts_model->save($page);
-			if ($result !== false) {
-				//
+			$com = getcompany($_POST['companycode']);
+			if($com[0]['admincode'] == sp_get_current_admin_id()){ //判断此管理员是否有权限删除本产品
+
+		$upload = new \Think\Upload();// 实例化上传类
+	    $upload->maxSize   =     3145728 ;// 设置附件上传大小
+  		$upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+	    $upload->rootPath  =      './Uploads/'; // 设置附件上传根目录
+    	$upload->savePath  =      ''; // 设置附件上传（子）目录
+    // 上传文件 
+    	$file   =   $upload->upload();
+    if($file) {
+           if($file['imgbg']!=NULL)
+       		$data['imgbg'] ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['imgbg']['savepath'].$file['imgbg']['savename'];
+       	if($file['imgone']!=NULL)
+        	$data['imgone'] ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['imgone']['savepath'].$file['imgone']['savename'];
+        if($file['imgtwo']!=NULL)
+        	$data['imgtwo'] ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['imgtwo']['savepath'].$file['imgtwo']['savename'];
+        if($file['imgthree']!=NULL)
+			$data['imgthree'] ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['imgthree']['savepath'].$file['imgthree']['savename'];
+		if($file['imgfour']!=NULL)
+       		$data['imgfour'] ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['imgfour']['savepath'].$file['imgfour']['savename'];
+	    }
+
+	$data['name'] = $_POST['name'];
+	$data['nongyao'] = $_POST['nongyao'];
+	$data['huafei'] = $_POST['huafei'];
+	$data['guangzhao'] = $_POST['guangzhao'];
+	$data['qiwen'] = $_POST['qiwen'];
+	$data['kindname'] = $_POST['kindname'];
+	$data['kindtime'] = $_POST['kindtime'];
+	$data['kindintroduction'] = $_POST['kindintroduction'];
+
+	if($db = M('product') -> where("companycode = '".$_POST['companycode']."' and productcode = '".$_POST['productcode']."'")->save($data) ){
+		$isdone = 1;
+	}else{
+		$isdone =0;
+	}
+		}
+		else{
+			$isdone = 0;
+		}
+		}
+
+			if ($isdone == 1) {
 				$this->success("保存成功！");
 			} else {
 				$this->error("保存失败！");
 			}
-		}
 	}
 	
 	function delete(){
-		if(isset($_POST['ids'])){
-			$ids = implode(",", $_POST['ids']);
-			$data=array("post_status"=>"0");
-			if ($this->posts_model->where("id in ($ids)")->save($data)) {
-				$this->success("删除成功！");
-			} else {
-				$this->error("删除失败！");
+		$code = codecheck(); //分解条码
+		$com = getcompany($code['companycode']); //获得公司信息
+		if($com[0]['admincode'] == sp_get_current_admin_id()){ //判断此管理员是否有权限删除本产品
+			if($info = M('product') ->where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'") -> delete()){ //删除
+				$isdone = 1;
+			}else{
+				$isdone = 0;
 			}
 		}else{
-			if(isset($_GET['id'])){
-				$id = intval(I("get.id"));
-				$data=array("id"=>$id,"post_status"=>"0");
-				if ($this->posts_model->save($data)) {
+			echo "无权限，请联系超级管理员。";
+			$isdone = 0;
+		}
+			if ($isdone) {	//向前端返回结果
 					$this->success("删除成功！");
 				} else {
 					$this->error("删除失败！");
 				}
-			}
-		}
 	}
 	
 	function restore(){

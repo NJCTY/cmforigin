@@ -14,9 +14,7 @@
 			<button class="btn btn-primary">{:L('SEARCH')}</button>
 		</form> -->
 		<form class="js-ajax-form" method="post">
-			<div class="table-actions">
-				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPage/delete')}" data-subcheck="true" data-msg="{:L('DELETE_CONFIRM_MESSAGE')}">{:L('DELETE')}</button>
-			</div>
+
 			<table class="table table-hover table-bordered table-list">
 				<thead>
 					<tr>
@@ -33,13 +31,15 @@
 				<tr>
 					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.id}"></td>
 					<td><a>{$vo.productcode}</a></td>
-					<td><a href="{:U('portal/page/index',array('id'=>$vo['id']))}" target="_blank"><span>{$vo.name}</span></a></td>
+					<td><a href="{:U('show/index/index',array('id'=>($code.$vo['productcode'])))}" target="_blank"><span>{$vo.name}</span></a></td>
 					 <td>{$vo.kindname}</td>
 					<td>{$name}</td>
 					<td>{$vo.timestamp}</td>
 					<td>
-						<a href="{:U('AdminPage/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a>|
-						<a href="{:U('AdminPage/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:L('DELETE')}</a>
+						<a href="{:U('AdminPage/edit',array('id'=>($code.$vo['productcode'])))}">{:L('EDIT')}</a>|
+						<a href="{:U('AdminPage/delete',array('id'=>($code.$vo['productcode'])))}" class="js-ajax-delete">{:L('DELETE')}</a>
+
+
 					</td>
 				</tr>
 				</foreach>
@@ -55,9 +55,9 @@
 					</tr>
 				</tfoot> -->
 			</table>
-			<div class="table-actions">
+<!-- 			<div class="table-actions">
 				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPage/delete')}" data-subcheck="true" data-msg="你确定删除吗？">{:L('DELETE')}</button>
-			</div>
+			</div> -->
 			<div class="pagination">{$Page}</div>
 		</form>
 	</div>

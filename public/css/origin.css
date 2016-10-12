@@ -123,10 +123,12 @@ position: absolute;
 .oneimg{
 	width:100%;
 	height: 200px;
+	border:1px solid white;
 }
 .twoimg{
 	width:100%;
 	height: 66px;
+		border:1px solid white;
 }
 #feiliao{
 	width: 100%;

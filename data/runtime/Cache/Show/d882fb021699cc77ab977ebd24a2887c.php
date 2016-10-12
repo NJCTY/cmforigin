@@ -51,7 +51,7 @@
     	
     	<div>
    			 <div class="header">
-        <img src="/public/image/<?php echo ($product["image"]); ?>" id="headimg">
+        <img src="<?php echo ($product["imgbg"]); ?>" id="headimg">
 
           <div class="headtext">
             <h1><?php echo ($product["name"]); ?></h1>
