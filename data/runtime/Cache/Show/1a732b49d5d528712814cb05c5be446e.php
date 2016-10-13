@@ -249,7 +249,7 @@ var myChart = new Chart(ctx, {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-      data : [11,10,9,12,12,11,9]
+      data : <?php echo ($product["guangzhao"]); ?>
     },
     {
       label: "平均气温（℃）",
@@ -270,7 +270,7 @@ var myChart = new Chart(ctx, {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-      data : [12,11,12,6,12,11,9]
+      data : <?php echo ($product["qiwen"]); ?>
     }
   ]
     }

@@ -81,10 +81,7 @@ var GV = {
 					<td><?php echo ($vo["timestamp"]); ?></td>
 					<td>
 						<a href="<?php echo U('AdminPage/edit',array('id'=>($code.$vo['productcode'])));?>"><?php echo L('EDIT');?></a>|
-						<a href="<?php echo U('AdminPage/delete',array('id'=>($code.$vo['productcode'])));?>" class="js-ajax-delete"><?php echo L('DELETE');?></a>|
-						<a href="<?php echo U('AdminPage/qrcode',array('id'=>($vo['companycode'].$vo['productcode'])));?>">二维码</a>
-
-
+						<a href="<?php echo U('AdminPage/delete',array('id'=>($code.$vo['productcode'])));?>" class="js-ajax-delete"><?php echo L('DELETE');?></a>
 
 					</td>
 				</tr><?php endforeach; endif; ?>

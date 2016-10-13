@@ -22,23 +22,23 @@ class AdminPageController extends AdminbaseController {
 			}
 		$this->display();
 	}
-	//文件上传函数
-	function imgupload(){
-    $upload = new \Think\Upload();// 实例化上传类
-    $upload->maxSize   =     3145728 ;// 设置附件上传大小
-    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-    $upload->rootPath  =      './Uploads/'; // 设置附件上传根目录
-    $upload->savePath  =      ''; // 设置附件上传（子）目录
-    // 上传文件 
-    $info   =   $upload->upload();
-    if(!$info) {// 上传错误提示错误信息
-            $this->error($upload->getError());
-            $info['success'] = false;
-        }
-        else{
-			echo "hahahachengongle";
-        }
+	//批次显示函数
+	function batch_index(){
+		$admincode = sp_get_current_admin_id();
+		$dbcompany = M('company');
+		$cominfo = $dbcompany -> where('admincode ='.$admincode) ->select();
+		$db = M('batch');
+		$posts = $db ->where("companycode = '".$cominfo[0]['code']."'")->select();
+		$dbp = M('product');
+		$post = $dbp ->where("companycode = '".$cominfo[0]['code']."'")->select();
+		$this->assign("posts",$posts);
+		$this->assign("name",$cominfo[0]['name']);
+		$this->assign("product",$post[0]);
+		$this->assign("code",$cominfo[0]['code']);
+		$this->display();		
 	}
+
+	//提交新产品函数
 	function post(){
 		if (IS_POST) {
 			            $upload = new \Think\Upload();// 实例化上传类
@@ -74,7 +74,7 @@ class AdminPageController extends AdminbaseController {
 		}
 	}
 
-
+	//产品信息管理页面
 	function index(){
 		$admincode = sp_get_current_admin_id();
 		$dbcompany = M('company');
@@ -202,7 +202,8 @@ class AdminPageController extends AdminbaseController {
 	
 	public function qrcode($level=3,$size=4)
   {
-  	$url = $_GET['url'];
+  	$id = $_GET['id'];
+  	$url = "http://".$_SERVER['SERVER_NAME']."/Show?id=".$id;
        Vendor('phpqrcode.phpqrcode');
        $errorCorrectionLevel =intval($level) ;//容错级别 
        $matrixPointSize = intval($size);//生成图片大小 

@@ -37,10 +37,7 @@
 					<td>{$vo.timestamp}</td>
 					<td>
 						<a href="{:U('AdminPage/edit',array('id'=>($code.$vo['productcode'])))}">{:L('EDIT')}</a>|
-						<a href="{:U('AdminPage/delete',array('id'=>($code.$vo['productcode'])))}" class="js-ajax-delete">{:L('DELETE')}</a>|
-						<a href="{:U('AdminPage/qrcode',array('id'=>($vo['companycode'].$vo['productcode'])))}">二维码</a>
-
-
+						<a href="{:U('AdminPage/delete',array('id'=>($code.$vo['productcode'])))}" class="js-ajax-delete">{:L('DELETE')}</a>
 
 					</td>
 				</tr>
