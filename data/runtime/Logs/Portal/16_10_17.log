@@ -100,3 +100,21 @@ NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
 [ 2016-10-17T20:10:36+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
 NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
 
+[ 2016-10-17T21:10:00+08:00 ] 127.0.0.1 /phpMyadmin/
+ERR: 无法加载控制器:PhpMyadmin
+
+[ 2016-10-17T21:10:08+08:00 ] 127.0.0.1 /phpMyAdmin/
+ERR: 无法加载控制器:PhpMyAdmin
+
+[ 2016-10-17T21:35:17+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-17T22:44:46+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-17T22:45:01+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-17T22:46:44+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=qrcode&id=100002048
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+

@@ -1,5 +1,17 @@
 <?php
-//获取当前
+//获取当前产品星级数据
+function getstar(){
+	$code = codecheck();//检查条码
+	$ip = getip();
+	if(M('commentstar')->where("ip = '".$ip."' and productcode = '".$code['productcode']."' and companycode ='".$code['companycode']."'")->find()){
+		$star = M('commentstar')->where("ip = '".$ip."' and productcode = '".$code['productcode']."' and companycode ='".$code['companycode']."'")->select();
+		return $star[0];
+	}else
+	{
+		$star[0]['level'] = 0;
+		return $star[0];
+	}
+}
 //获取ip函数
 function getip($type = 0) {
     $type       =  $type ? 1 : 0;

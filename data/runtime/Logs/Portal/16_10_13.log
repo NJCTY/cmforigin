@@ -127,3 +127,63 @@ SQL: UPDATE `check_product` SET `name`='土豆',`nongyao`='22',`huafei`='22',`gu
 [ 2016-10-13T11:46:58+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
 NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
 
+[ 2016-10-13T12:25:45+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:25:47+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=qrcode&id=100002048
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:25:49+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=qrcode&menuid=164
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:25:50+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:25:52+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=qrcode&id=100001003
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:25:54+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=qrcode&menuid=164
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:25:55+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:25:57+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=qrcode&menuid=164
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:25:58+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:26:09+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:26:10+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=qrcode&menuid=164
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:26:11+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:26:33+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=qrcode&id=100002048
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:26:43+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:27:05+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=qrcode&id=100001004
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:29:10+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T12:29:11+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=add
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T13:03:29+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T13:06:08+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-13T13:06:09+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
