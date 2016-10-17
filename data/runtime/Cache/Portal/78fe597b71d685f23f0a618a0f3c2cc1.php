@@ -126,6 +126,7 @@ var GV = {
 							<td><textarea name="kindintroduction" style="width: 98%; height: 50px;"><?php echo ($post["post_excerpt"]); ?></textarea>
 							</td>
 						</tr>
+
 					</table>
 				</div>
 				<div class="span3">

@@ -14,6 +14,7 @@ class AdminPageController extends AdminbaseController {
 		parent::_initialize();
 		$this->posts_model =D("Common/Posts");
 	}
+	//修改公司信息
 	function companyinfo(){
 		$admincode = sp_get_current_admin_id();
 			if($check = M('company') ->where("admincode = ".$admincode)->find()){

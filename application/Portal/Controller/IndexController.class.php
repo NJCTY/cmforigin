@@ -17,7 +17,7 @@ class IndexController extends HomebaseController {
 	public function index() {
     	// $this->display(":index");
     	Header("HTTP/1.1 303 See Other"); 
-Header("Location: /Admin"); 
+Header("Location: /index.php/Admin"); 
 exit;
     }
 

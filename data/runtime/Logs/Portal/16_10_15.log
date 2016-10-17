@@ -1,0 +1,237 @@
+[ 2016-10-15T10:37:54+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:42:29+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:42:31+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=add
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:42:41+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:43:27+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:43:28+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:44:08+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:44:42+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:45:12+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:45:18+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:46:27+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001485s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0026s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_auth_access` [ RunTime:0.0024s ]
+SQL: SELECT * FROM check_auth_access a INNER JOIN check_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('portal/adminpage/post')  [ RunTime:0.0004s ]
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+SQL: SHOW COLUMNS FROM `check_posts` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `check_company` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `check_company` WHERE ( admincode = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `check_company` SET `name`='南京邮电大学',`money`='28000万元',`introduction`='<p>1111<br/></p>',`admincode`='3' WHERE ( admincode = 3 ) [ RunTime:0.0048s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000675s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000718s ]
+
+[ 2016-10-15T10:46:43+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:47:11+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:53:18+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:55:16+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002144s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0276s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0024s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_auth_access` [ RunTime:0.0025s ]
+SQL: SELECT * FROM check_auth_access a INNER JOIN check_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('portal/adminpage/post')  [ RunTime:0.0004s ]
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+SQL: SHOW COLUMNS FROM `check_posts` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `check_company` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `check_company` WHERE ( admincode = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `check_company` SET `name`='南京邮电大学',`money`='28000万元',`introduction`='<p>									</p><p>南京邮电大学是一个很好的学校哦！<br/></p><p>								</p>',`admincode`='3' WHERE ( admincode = 3 ) [ RunTime:0.0061s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000723s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000782s ]
+
+[ 2016-10-15T10:55:19+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000940s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001730s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0027s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_auth_access` [ RunTime:0.0025s ]
+SQL: SELECT * FROM check_auth_access a INNER JOIN check_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('portal/adminpage/post')  [ RunTime:0.0004s ]
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+SQL: SHOW COLUMNS FROM `check_posts` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `check_company` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `check_company` WHERE ( admincode = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `check_company` SET `name`='南京邮电大学',`money`='28000万元',`introduction`='<p>									</p><p>南京邮电大学是一个很好的学校哦！<br/></p><p>								</p>',`admincode`='3' WHERE ( admincode = 3 ) [ RunTime:0.0065s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000814s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000860s ]
+
+[ 2016-10-15T10:55:25+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:56:11+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000738s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001572s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0024s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_auth_access` [ RunTime:0.0025s ]
+SQL: SELECT * FROM check_auth_access a INNER JOIN check_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('portal/adminpage/post')  [ RunTime:0.0004s ]
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+SQL: SHOW COLUMNS FROM `check_posts` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `check_company` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `check_company` WHERE ( admincode = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `check_company` SET `name`='南京邮电大学',`money`='28000万元',`introduction`='<p>									</p><p><br/></p><p>南京邮电大学是一个很好的学校哦！<br/></p><p><br/></p><p>								</p>',`admincode`='3' WHERE ( admincode = 3 ) [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000656s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000700s ]
+
+[ 2016-10-15T10:56:14+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:56:23+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:56:27+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001543s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0024s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_auth_access` [ RunTime:0.0024s ]
+SQL: SELECT * FROM check_auth_access a INNER JOIN check_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('portal/adminpage/post')  [ RunTime:0.0004s ]
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+SQL: SHOW COLUMNS FROM `check_posts` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `check_company` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `check_company` WHERE ( admincode = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `check_company` SET `name`='南京邮电大学',`money`='28000万元',`introduction`='<p>									</p><p><br/></p><p><br/></p><p>南京邮电大学是一个很好的学校哦！<br/></p><p><br/></p><p><br/></p><p>								</p>',`admincode`='3' WHERE ( admincode = 3 ) [ RunTime:0.0054s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000656s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000700s ]
+
+[ 2016-10-15T10:56:30+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001595s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `check_users` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0024s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `check_auth_access` [ RunTime:0.0024s ]
+SQL: SELECT * FROM check_auth_access a INNER JOIN check_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('3') AND b.name IN ('portal/adminpage/post')  [ RunTime:0.0004s ]
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+SQL: SHOW COLUMNS FROM `check_posts` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `check_company` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `check_company` WHERE ( admincode = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `check_company` SET `name`='南京邮电大学',`money`='28000万元',`introduction`='<p>									</p><p><br/></p><p><br/></p><p>南京邮电大学是一个很好的学校哦！1<br/></p><p><br/></p><p><br/></p><p>								</p>',`admincode`='3' WHERE ( admincode = 3 ) [ RunTime:0.0042s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000642s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000685s ]
+
+[ 2016-10-15T10:58:48+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:58:52+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:58:53+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:59:37+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T10:59:39+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:00:25+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:00:34+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:00:43+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:01:06+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:01:07+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:01:22+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:01:29+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:01:30+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:01:47+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=post
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:01:49+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:19:02+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=companyinfo&menuid=162
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:19:19+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:19:22+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:19:22+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=qrcode&menuid=164
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:19:25+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:19:26+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=add
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:19:28+08:00 ] 127.0.0.1 /index.php?g=&m=AdminPage&a=index
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-10-15T11:19:46+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+

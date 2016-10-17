@@ -83,6 +83,8 @@
                 </div>
                 <div class= "companyname" style="left:10%;top:15px;">
                   <h3>评分等级：</h3>
+                  <a href="/index.php/Show/index/star?id=100002048&level=1">1</a>
+                  <a href="/index.php/Show/index/star?id=100002048&level=3">3</a>
                   <p>评分人数：              好评数：      </p>
                 </div>
 
