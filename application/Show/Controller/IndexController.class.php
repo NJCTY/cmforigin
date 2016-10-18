@@ -15,6 +15,38 @@ class IndexController extends HomebaseController{
         $this -> assign('origincode',$code['origincode']);
         $this->display('doc');
     }
+
+    //显示评论函数
+    function comment_index(){
+        $code['companycode'] = $_POST['companycode'];
+        $code['productcode'] = $_POST['productcode'];
+        $dbcom = M('comment');
+        if($dbcom -> where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'")->find())
+        {
+            //查看是否有评论
+            $result = $dbcom -> where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'")->page($_POST['page'],5)->select();
+            $result['exist'] = 1;
+        }else{
+            //如果没评论
+            $result['exist'] = 0;
+        }
+
+        $this->ajaxreturn($result);
+    }
+
+    //添加新评论
+    function comment_post(){
+        // $ip = getip();
+        // $code = codecheck();
+        // if($dbstar->where("ip = '".$ip."' and productcode = '".$code['productcode']."' and companycode ='".$code['companycode']."'")->find())
+        // {
+            
+        // }
+    }
+
+
+
+
     //评论星级函数
     function star(){
         $flag = 0; //初始化flag

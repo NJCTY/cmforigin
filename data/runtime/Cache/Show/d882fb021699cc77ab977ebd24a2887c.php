@@ -141,8 +141,24 @@ function rat(star,result,m){
               
               <p style= "color:#8A8B8C;">高票点评</p>
             </div>
+            <div id = "contentcom">
+              
+            </div>
+<script type="text/javascript">
+$(document).ready(function(){
+  var result;
+  $.post("/index.php/Show/index/comment_index",{
+    productcode:"<?php echo ($product["productcode"]); ?>",
+    companycode:"<?php echo ($product["companycode"]); ?>",
+    page:1
+    },function(data,status){result = data;}
+    );
 
 
+  var div=$('<div></div>');
+
+});
+</script>
 
 
               </div>

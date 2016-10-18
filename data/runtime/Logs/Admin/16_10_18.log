@@ -1,0 +1,11 @@
+[ 2016-10-18T20:56:39+08:00 ] 127.0.0.1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000939s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001711s ]
+SQL: SHOW COLUMNS FROM `check_users` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `check_users` WHERE `user_login` = 'njupt' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `check_role_user` [ RunTime:0.0028s ]
+SQL: SELECT `role_id` FROM check_role_user a INNER JOIN check_role as b on a.role_id =b.id  WHERE `user_id` = '3' AND `status` = 1  [ RunTime:0.0014s ]
+SQL: UPDATE `check_users` SET `user_login`='njupt',`user_pass`='###d2df176462c29cba4dcbdd421729547a',`user_nicename`='',`user_email`='ctygood@gmail.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2016-10-18 20:56:39',`create_time`='2016-10-06 15:58:05',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '3' [ RunTime:0.0014s ]
+
