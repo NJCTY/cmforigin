@@ -146,16 +146,37 @@ function rat(star,result,m){
             </div>
 <script type="text/javascript">
 $(document).ready(function(){
-  var result;
+  // $.ajax({
+  //   type="post",
+  //   url:"/index.php/Show/index/comment_index",
+  //   data:{
+  //   productcode:"<?php echo ($product["productcode"]); ?>",
+  //   companycode:"<?php echo ($product["companycode"]); ?>",
+  //   page:1
+  //   },
+  //   dataType="json",
+  //      success:function(callbackdata){   
+  //    alert("success");   
+  //  }
+  // });
+
+
+
   $.post("/index.php/Show/index/comment_index",{
     productcode:"<?php echo ($product["productcode"]); ?>",
     companycode:"<?php echo ($product["companycode"]); ?>",
     page:1
-    },function(data,status){result = data;}
+    },function(data){
+    for(var k=0;k<5;k++)
+    {
+        $("#contentcom").append("<div id='div+"+k+"'>"+data[k]['content']+"</div>");
+     }
+
+
+    }
     );
 
 
-  var div=$('<div></div>');
 
 });
 </script>

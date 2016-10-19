@@ -1,0 +1,176 @@
+[ 2016-10-19T20:08:44+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000981s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002324s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:09:14+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001605s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:09:41+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001522s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:10:17+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001753s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:16:50+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001092s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002132s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:16:58+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001557s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:17:02+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001823s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:18:41+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001817s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:27:52+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000963s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001979s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:28:03+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001702s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:41:34+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002575s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:41:45+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001261s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003279s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:43:24+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001594s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:43:55+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001680s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:44:11+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001783s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
+[ 2016-10-19T20:44:32+08:00 ] 127.0.0.1 /index.php/Show/index/comment_index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001366s ]
+SQL: SHOW COLUMNS FROM `check_comment` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `check_comment` WHERE ( companycode = '10000' and productcode = '2048' ) LIMIT 0,5   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: url C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 24 行.
+NOTIC: [8] Undefined index: status C:\xampp\htdocs\cmforigin\application\Common\Controller\AppframeController.class.php 第 25 行.
+
