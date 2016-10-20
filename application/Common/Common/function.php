@@ -1,4 +1,10 @@
 <?php
+//获取当前批次
+function getbatch($code){
+	$dbone = M('batch');
+    $product = $dbone -> where("batchcode = '".$code."'") ->select();
+    return $product;
+}
 //获取当前产品星级数据
 function getstar(){
 	$code = codecheck();//检查条码

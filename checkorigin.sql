@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2016-10-12 10:21:57
+-- Generation Time: 2016-10-20 06:01:27
 -- 服务器版本： 10.1.10-MariaDB
 -- PHP Version: 7.0.2
 
@@ -108,6 +108,8 @@ INSERT INTO `check_auth_access` (`role_id`, `rule_name`, `type`) VALUES
 (2, 'portal/adminpage/recyclebin', 'admin_url'),
 (2, 'portal/adminpage/clean', 'admin_url'),
 (2, 'portal/adminpage/restore', 'admin_url'),
+(3, 'portal/adminpage/add_post', 'admin_url'),
+(3, 'portal/adminpage/add', 'admin_url'),
 (3, 'portal/adminpage/edit_post', 'admin_url'),
 (3, 'portal/adminpage/edit', 'admin_url'),
 (3, 'portal/adminpage/delete', 'admin_url'),
@@ -133,12 +135,10 @@ INSERT INTO `check_auth_access` (`role_id`, `rule_name`, `type`) VALUES
 (3, 'portal/adminpost/index', 'admin_url'),
 (3, 'comment/commentadmin/check', 'admin_url'),
 (3, 'comment/commentadmin/delete', 'admin_url'),
-(3, 'comment/commentadmin/index', 'admin_url'),
+(3, 'portal/adminpage/comment_manage', 'admin_url'),
 (3, 'api/guestbookadmin/delete', 'admin_url'),
 (3, 'api/guestbookadmin/index', 'admin_url'),
 (3, 'admin/content/default', 'admin_url'),
-(3, 'portal/adminpage/add', 'admin_url'),
-(3, 'portal/adminpage/add_post', 'admin_url'),
 (3, 'admin/recycle/default', 'admin_url'),
 (3, 'portal/adminpost/recyclebin', 'admin_url'),
 (3, 'portal/adminpost/restore', 'admin_url'),
@@ -147,6 +147,7 @@ INSERT INTO `check_auth_access` (`role_id`, `rule_name`, `type`) VALUES
 (3, 'portal/adminpage/clean', 'admin_url'),
 (3, 'portal/adminpage/restore', 'admin_url'),
 (3, 'portal/adminpage/qrcode', 'admin_url'),
+(3, 'portal/adminpage/batch_index', 'admin_url'),
 (3, 'portal/adminpage/companyinfo', 'admin_url'),
 (3, 'portal/adminpage/post', 'admin_url');
 
@@ -165,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `check_auth_rule` (
   `title` varchar(20) NOT NULL DEFAULT '' COMMENT '规则中文描述',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否有效(0:无效,1:有效)',
   `condition` varchar(300) NOT NULL DEFAULT '' COMMENT '规则附加条件'
-) ENGINE=MyISAM AUTO_INCREMENT=166 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
+) ENGINE=MyISAM AUTO_INCREMENT=168 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
 
 --
 -- 转存表中的数据 `check_auth_rule`
@@ -336,7 +337,61 @@ INSERT INTO `check_auth_rule` (`id`, `module`, `type`, `name`, `param`, `title`,
 (162, 'Admin', 'admin_url', 'admin/content/companyinfo', NULL, '公司信息管理', 1, ''),
 (163, 'Portal', 'admin_url', 'portal/adminpage/companyinfo', NULL, '公司信息管理', 1, ''),
 (164, 'Portal', 'admin_url', 'portal/adminpage/post', NULL, '添加修改公司信息', 1, ''),
-(165, 'Portal', 'admin_url', 'portal/adminpage/qrcode', NULL, '生成二维码', 1, '');
+(165, 'Portal', 'admin_url', 'portal/adminpage/qrcode', NULL, '生成二维码', 1, ''),
+(166, 'Portal', 'admin_url', 'portal/adminpage/batch_index', NULL, '批次管理', 1, ''),
+(167, 'Portal', 'admin_url', 'portal/adminpage/comment_manage', NULL, '评论管理', 1, '');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `check_batch`
+--
+
+CREATE TABLE IF NOT EXISTS `check_batch` (
+  `id` int(11) NOT NULL,
+  `companycode` varchar(11) NOT NULL,
+  `productcode` varchar(11) NOT NULL,
+  `batchcode` varchar(11) NOT NULL,
+  `admincode` int(11) NOT NULL,
+  `place` varchar(255) NOT NULL,
+  `outtime` varchar(255) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+--
+-- 转存表中的数据 `check_batch`
+--
+
+INSERT INTO `check_batch` (`id`, `companycode`, `productcode`, `batchcode`, `admincode`, `place`, `outtime`, `timestamp`) VALUES
+(1, '10000', '2048', '100001', 3, '南京文苑路', '2016.3.2', '2016-10-13 03:28:56');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `check_comment`
+--
+
+CREATE TABLE IF NOT EXISTS `check_comment` (
+  `comment_id` int(11) NOT NULL,
+  `ip` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `productcode` varchar(16) NOT NULL,
+  `companycode` varchar(16) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+
+--
+-- 转存表中的数据 `check_comment`
+--
+
+INSERT INTO `check_comment` (`comment_id`, `ip`, `content`, `productcode`, `companycode`, `timestamp`) VALUES
+(1, '122.122.112.122', '12', '2048', '10000', '2016-10-19 14:23:33'),
+(3, '1123', '1231231', '2048', '10000', '2016-10-19 14:38:42'),
+(4, '232', '10jhjkdfdjksfhsjkdfn', '2048', '10000', '2016-10-19 14:39:03'),
+(5, '2048', 'iehnkjwrnwkehrwekjhrjkewnrjwkrwr', '2048', '10000', '2016-10-19 14:39:18'),
+(6, '23203', '204hhfjkhfjksdnfsndfks', '2048', '10000', '2016-10-19 14:39:31'),
+(7, '123123', '第七个', '2048', '10000', '2016-10-19 14:39:51'),
+(9, '127.0.0.1', '222', '2048', '10000', '2016-10-19 15:58:30');
 
 -- --------------------------------------------------------
 
@@ -360,6 +415,30 @@ CREATE TABLE IF NOT EXISTS `check_comments` (
   `path` varchar(500) DEFAULT NULL,
   `status` smallint(1) NOT NULL DEFAULT '1' COMMENT '状态，1已审核，0未审核'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='评论表';
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `check_commentstar`
+--
+
+CREATE TABLE IF NOT EXISTS `check_commentstar` (
+  `star_id` int(11) NOT NULL,
+  `ip` varchar(255) NOT NULL,
+  `productcode` varchar(16) NOT NULL,
+  `companycode` varchar(16) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `level` set('1','2','3','4','5') NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
+--
+-- 转存表中的数据 `check_commentstar`
+--
+
+INSERT INTO `check_commentstar` (`star_id`, `ip`, `productcode`, `companycode`, `timestamp`, `level`) VALUES
+(2, '127.0.0.1', '2048', '10000', '2016-10-17 11:54:08', '5'),
+(3, '127.0.0.1', '1003', '10000', '2016-10-17 14:35:04', '3'),
+(4, '127.0.0.1', '1004', '10000', '2016-10-17 14:35:58', '4');
 
 -- --------------------------------------------------------
 
@@ -399,7 +478,7 @@ CREATE TABLE IF NOT EXISTS `check_company` (
 --
 
 INSERT INTO `check_company` (`com_id`, `code`, `name`, `money`, `introduction`, `image`, `timestamp`, `admincode`) VALUES
-(1, 10000, '南京邮电大学', '28000万元', '南京邮电大学是一个厉害的学校。', 'http://127.0.0.1/Uploads/2016-10-07/57f7b20173b73.jpg', '2016-09-25 14:18:09', 3),
+(1, 10000, '南京邮电大学', '28000万元', '<p>									</p><p><span style="color: rgb(204, 0, 0); font-family: arial; font-size: 13px; background-color: rgb(255, 255, 255);">南京邮电大学</span><span style="color: rgb(51, 51, 51); font-family: arial; font-size: 13px; background-color: rgb(255, 255, 255);">坐落于六朝古都南京市，是原由工业与信息化部直属、现工信部与江苏省政府共建的以信息科技为特色、工学门类为主体、工管文理协调发展的多科性全国重点大学。首批入选国家“2011计划（14个协同创新中心）”建设，同时也是进入教育部“卓越工程师教育培养计划”建设的名牌高校。</span><br/></p><p><br/></p><p>								</p>', 'http://127.0.0.1/Uploads/2016-10-17/58048939be70c.jpg', '2016-09-25 14:18:09', 3),
 (2, 10001, '南邮校科协', '0元', '哈哈哈哈哈哈哈哈哈哈哈哈', '', '2016-09-25 14:18:09', 0),
 (3, 0, '11', '22', '33', '', '2016-10-06 12:24:24', 0),
 (4, 0, 'ceshi1', 'ceshi', 'ceshi', 'http://127.0.0.1/Uploads/2016-10-07/57f7b18de3911.jpg', '2016-10-06 12:37:20', 1),
@@ -466,7 +545,7 @@ CREATE TABLE IF NOT EXISTS `check_menu` (
   `icon` varchar(50) DEFAULT NULL COMMENT '菜单图标',
   `remark` varchar(255) NOT NULL COMMENT '备注',
   `listorder` smallint(6) unsigned NOT NULL DEFAULT '0' COMMENT '排序ID'
-) ENGINE=MyISAM AUTO_INCREMENT=165 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
+) ENGINE=MyISAM AUTO_INCREMENT=166 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
 
 --
 -- 转存表中的数据 `check_menu`
@@ -474,9 +553,9 @@ CREATE TABLE IF NOT EXISTS `check_menu` (
 
 INSERT INTO `check_menu` (`id`, `parentid`, `app`, `model`, `action`, `data`, `type`, `status`, `name`, `icon`, `remark`, `listorder`) VALUES
 (1, 0, 'Admin', 'Content', 'default', '', 0, 1, '产品管理', 'th', '', 30),
-(2, 1, 'Api', 'Guestbookadmin', 'index', '', 1, 0, '所有留言', '', '', 3),
+(2, 1, 'Api', 'Guestbookadmin', 'index', '', 1, 1, '所有留言', '', '', 3),
 (3, 2, 'Api', 'Guestbookadmin', 'delete', '', 1, 0, '删除网站留言', '', '', 0),
-(4, 1, 'Comment', 'Commentadmin', 'index', '', 1, 0, '评论管理', '', '', 0),
+(4, 1, 'Portal', 'AdminPage', 'comment_manage', '', 1, 1, '评论管理', '', '', 0),
 (5, 4, 'Comment', 'Commentadmin', 'delete', '', 1, 0, '删除评论', '', '', 0),
 (6, 4, 'Comment', 'Commentadmin', 'check', '', 1, 0, '评论审核', '', '', 0),
 (7, 1, 'Portal', 'AdminPost', 'index', '', 1, 0, '文章管理', '', '', 1),
@@ -636,7 +715,8 @@ INSERT INTO `check_menu` (`id`, `parentid`, `app`, `model`, `action`, `data`, `t
 (161, 149, 'Admin', 'User', 'cancelban', '', 1, 0, '启用管理员', '', '', 0),
 (162, 0, 'Portal', 'AdminPage', 'companyinfo', '', 1, 1, '公司信息管理', '', '', 0),
 (163, 162, 'Portal', 'AdminPage', 'post', '', 1, 0, '添加修改公司信息', '', '', 0),
-(164, 1, 'Portal', 'AdminPage', 'qrcode', '', 1, 1, '生成二维码', '', '', 0);
+(164, 1, 'Portal', 'AdminPage', 'qrcode', '', 1, 1, '生成二维码', '', '', 0),
+(165, 1, 'Portal', 'AdminPage', 'batch_index', '', 1, 1, '批次管理', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -821,7 +901,7 @@ CREATE TABLE IF NOT EXISTS `check_product` (
 --
 
 INSERT INTO `check_product` (`product_id`, `productcode`, `companycode`, `name`, `image`, `kindname`, `kindtime`, `kindintroduction`, `kindimage`, `timestamp`, `nongyao`, `huafei`, `guangzhao`, `qiwen`, `imgbg`, `imgone`, `imgtwo`, `imgthree`, `imgfour`) VALUES
-(1, '2048', '10000', '土豆', 'tudou.jpg', '底西瑞', '生长期：110天 原产地：荷兰', '植株半直立，分枝少，株高55-60厘米，分枝4-5个，叶片小而坚实。侧小叶4-5对，叶色灰绿，生长势强，茎粗壯，有明显的棕红色。花冠紫红色，花粉多，天然果较多，结薯集中4-5块，薯块大，生育期105-110天。产量一般亩产1700公斤，最高亩产2500-3000公斤。', 'kindtudou.png', '2016-10-02 13:03:39', '22', '22', '', '', 'http://127.0.0.1/Uploads/2016-10-11/57fc8278329fc.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc82783325c.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc82783349d.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc827833747.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc827833ade.jpg'),
+(1, '2048', '10000', '土豆', 'tudou.jpg', '底西瑞', '生长期：110天 原产地：荷兰', '植株半直立，分枝少，株高55-60厘米，分枝4-5个，叶片小而坚实。侧小叶4-5对，叶色灰绿，生长势强，茎粗壯，有明显的棕红色。花冠紫红色，花粉多，天然果较多，结薯集中4-5块，薯块大，生育期105-110天。产量一般亩产1700公斤，最高亩产2500-3000公斤。', 'kindtudou.png', '2016-10-02 13:03:39', '22', '22', '[11,10,9,12,12,11,9]', '[11,10,9,12,12,11,9]', 'http://127.0.0.1/Uploads/2016-10-11/57fc8278329fc.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc82783325c.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc82783349d.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc827833747.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc827833ade.jpg'),
 (3, '1003', '10000', '西瓜', '', '早佳8424', '产地:东台', '早佳8424，开花至果实成熟28至45天左右，生长势中等，座果性好。果实圆形，绿皮上覆墨绿窄条带，外形美观，红瓤，质脆口感极佳，中心含糖11-12度。耐贮运。合理密植，，适于双蔓整枝或三蔓整枝，喜肥沃土壤，适度灌溉。适于早熟地膜覆盖及露地栽培，花期遇雨应进行人工辅助授粉，九成熟时采收为宜。上市时间4月中旬至10月上旬。适宜各地栽培，极适合长江流域栽培。采瓜前3天不宜浇水，以防裂瓜和降低糖度，并请参考当地栽培习惯。', '', '2016-10-11 05:10:09', 'nongyao', 'huafei', 'gongzhao', 'qiwen', 'http://127.0.0.1/Uploads/2016-10-11/57fc837b70c6c.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc840875ce3.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc841dd438c.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc841dd45be.jpg', 'http://127.0.0.1/Uploads/2016-10-11/57fc841dd4785.jpg'),
 (4, '1004', '10000', '葡萄', '', '水晶葡萄', '产地:南京', '水晶葡萄是是是是', '', '2016-10-11 05:13:38', 'hahah', '233', '23121', 'jew2', 'http://127.0.0.1/Uploads/2016-10-11/57fc750289d4f.jpg', 'http://127.0.0.1/Uploads/', 'http://127.0.0.1/Uploads/', 'http://127.0.0.1/Uploads/', 'http://127.0.0.1/Uploads/');
 
@@ -868,7 +948,8 @@ CREATE TABLE IF NOT EXISTS `check_role_user` (
 
 INSERT INTO `check_role_user` (`role_id`, `user_id`) VALUES
 (3, 3),
-(3, 4);
+(3, 4),
+(3, 5);
 
 -- --------------------------------------------------------
 
@@ -988,17 +1069,18 @@ CREATE TABLE IF NOT EXISTS `check_users` (
   `user_type` smallint(1) DEFAULT '1' COMMENT '用户类型，1:admin ;2:会员',
   `coin` int(11) NOT NULL DEFAULT '0' COMMENT '金币',
   `mobile` varchar(20) NOT NULL DEFAULT '' COMMENT '手机号'
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 --
 -- 转存表中的数据 `check_users`
 --
 
 INSERT INTO `check_users` (`id`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `avatar`, `sex`, `birthday`, `signature`, `last_login_ip`, `last_login_time`, `create_time`, `user_activation_key`, `user_status`, `score`, `user_type`, `coin`, `mobile`) VALUES
-(1, 'admin', '###d2df176462c29cba4dcbdd421729547a', 'admin', 'B15011828@njupt.edu.cn', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-10-11 14:25:48', '2016-09-20 03:29:36', '', 1, 0, 1, 0, ''),
+(1, 'admin', '###d2df176462c29cba4dcbdd421729547a', 'admin', 'B15011828@njupt.edu.cn', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-10-20 11:51:43', '2016-09-20 03:29:36', '', 1, 0, 1, 0, ''),
 (2, 'ctygood_vip_qq_com', '###d2df176462c29cba4dcbdd421729547a', 'ctygood_vip_qq_com', 'ctygood@vip.qq.com', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-09-22 13:49:22', '2016-09-22 13:49:22', '', 1, 0, 2, 0, ''),
-(3, 'njupt', '###d2df176462c29cba4dcbdd421729547a', '', 'ctygood@gmail.com', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-10-11 14:27:00', '2016-10-06 15:58:05', '', 1, 0, 1, 0, ''),
-(4, 'addtest', '###d2df176462c29cba4dcbdd421729547a', '', '222@22.com', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-10-06 20:53:09', '2016-10-06 20:52:18', '', 1, 0, 1, 0, '');
+(3, 'njupt', '###d2df176462c29cba4dcbdd421729547a', '', 'ctygood@gmail.com', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-10-20 11:52:44', '2016-10-06 15:58:05', '', 1, 0, 1, 0, ''),
+(4, 'addtest', '###d2df176462c29cba4dcbdd421729547a', '', '222@22.com', '', NULL, 0, NULL, NULL, '127.0.0.1', '2016-10-06 20:53:09', '2016-10-06 20:52:18', '', 1, 0, 1, 0, ''),
+(5, 'nuptsast', '###d2df176462c29cba4dcbdd421729547a', '', 'cc@ee.com', '', NULL, 0, NULL, NULL, NULL, '2000-01-01 00:00:00', '2016-10-20 11:45:47', '', 1, 0, 1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -1049,6 +1131,18 @@ ALTER TABLE `check_auth_rule`
   ADD KEY `module` (`module`,`status`,`type`);
 
 --
+-- Indexes for table `check_batch`
+--
+ALTER TABLE `check_batch`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `check_comment`
+--
+ALTER TABLE `check_comment`
+  ADD PRIMARY KEY (`comment_id`);
+
+--
 -- Indexes for table `check_comments`
 --
 ALTER TABLE `check_comments`
@@ -1058,6 +1152,12 @@ ALTER TABLE `check_comments`
   ADD KEY `comment_parent` (`parentid`),
   ADD KEY `table_id_status` (`post_table`,`post_id`,`status`),
   ADD KEY `createtime` (`createtime`);
+
+--
+-- Indexes for table `check_commentstar`
+--
+ALTER TABLE `check_commentstar`
+  ADD PRIMARY KEY (`star_id`);
 
 --
 -- Indexes for table `check_common_action_log`
@@ -1223,12 +1323,27 @@ ALTER TABLE `check_asset`
 -- AUTO_INCREMENT for table `check_auth_rule`
 --
 ALTER TABLE `check_auth_rule`
-  MODIFY `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '规则id,自增主键',AUTO_INCREMENT=166;
+  MODIFY `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '规则id,自增主键',AUTO_INCREMENT=168;
+--
+-- AUTO_INCREMENT for table `check_batch`
+--
+ALTER TABLE `check_batch`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `check_comment`
+--
+ALTER TABLE `check_comment`
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `check_comments`
 --
 ALTER TABLE `check_comments`
   MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `check_commentstar`
+--
+ALTER TABLE `check_commentstar`
+  MODIFY `star_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `check_common_action_log`
 --
@@ -1253,7 +1368,7 @@ ALTER TABLE `check_links`
 -- AUTO_INCREMENT for table `check_menu`
 --
 ALTER TABLE `check_menu`
-  MODIFY `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=165;
+  MODIFY `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=166;
 --
 -- AUTO_INCREMENT for table `check_nav`
 --
@@ -1323,7 +1438,7 @@ ALTER TABLE `check_term_relationships`
 -- AUTO_INCREMENT for table `check_users`
 --
 ALTER TABLE `check_users`
-  MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `check_user_favorites`
 --

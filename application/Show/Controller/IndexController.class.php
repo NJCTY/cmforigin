@@ -7,9 +7,9 @@ class IndexController extends HomebaseController{
         $code = codecheck();
         $product = getproduct($code['productcode']);
         $company = getcompany($code['companycode']);
+        $batch = getbatch($code['batchcode']);
 
-
-
+$this -> assign('batch',$batch[0]);
         $this -> assign('product',$product[0]);
         $this -> assign('company',$company[0]);
         $this -> assign('origincode',$code['origincode']);
@@ -24,7 +24,7 @@ class IndexController extends HomebaseController{
         if($dbcom -> where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'")->find())
         {
             //查看是否有评论
-            $result = $dbcom -> where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'")->page($_POST['page'],5)->select();
+            $result = $dbcom -> where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'")->order("comment_id desc")->page($_POST['page'],5)->select();
             $result['exist'] = 1;
         }else{
             //如果没评论
@@ -36,12 +36,26 @@ class IndexController extends HomebaseController{
 
     //添加新评论
     function comment_post(){
-        // $ip = getip();
-        // $code = codecheck();
-        // if($dbstar->where("ip = '".$ip."' and productcode = '".$code['productcode']."' and companycode ='".$code['companycode']."'")->find())
-        // {
-            
-        // }
+        $ip = getip();
+        $code['companycode'] = $_POST['companycode'];
+        $code['productcode'] = $_POST['productcode'];
+        $db = M("comment");
+        if($db->where("ip = '".$ip."' and productcode = '".$code['productcode']."' and companycode ='".$code['companycode']."'")->find())
+        {
+            $result['flag'] = 1;
+            $result['isdone'] = 0;
+        }else{
+            $data['content'] = $_POST['data'];
+            $data['productcode'] = $code['productcode'];
+            $data['companycode'] = $code['companycode']; 
+            $data['ip'] = $ip;
+            if($db -> data($data)->add()){
+                $result['isdone'] = 1;
+            }else{
+                $result['isdone'] = 0;
+            }
+        }
+        $this->ajaxreturn($result);
     }
 
 
@@ -98,6 +112,16 @@ class IndexController extends HomebaseController{
         $product = getproduct($code['productcode']);
         $company = getcompany($code['companycode']);
         $star = getstar();
+
+        //计算星数百分比
+        $total = M('commentstar') -> where("productcode = '".$code['productcode']."' and companycode = '".$code['companycode']."'")->count();
+        $dbstar =  M('commentstar') -> where("productcode = '".$code['productcode']."' and companycode = '".$code['companycode']."'")->select();
+        $count = 0;
+        foreach ($dbstar as $key => $value) {
+            $count = $count + $value['level'];
+        }
+        $result = 100*($count / ($total * 5));
+        $this -> assign('percent',$result);
         $this -> assign('star',$star);
         $this -> assign('company',$company[0]);
         $this -> assign('product',$product[0]);

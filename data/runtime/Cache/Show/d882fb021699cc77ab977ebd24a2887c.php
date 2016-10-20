@@ -73,14 +73,14 @@
 </div>
 </div>
 
-  			  <div class="info">
+  			  <div class="info" style="height: auto;overflow: display;">
   			  		<div class="title">
   			  			<img src="/public/image/6.png" class="titleimg">
               </div>
 <div class="companyinfo">
 
-                <div class="c100 p99 small circle">
-                    <span>99%</span>
+                <div class="c100 p<?php echo ($percent); ?> small circle">
+                    <span><?php echo ($percent); ?>%</span>
                     <div class="slice">
                         <div class="bar"></div>
                         <div class="fill"></div>
@@ -139,44 +139,60 @@ function rat(star,result,m){
             <div class="mui-divider"></div>
             <div style="left:1%"> 
               
-              <p style= "color:#8A8B8C;">高票点评</p>
+              <p style= "color:#8A8B8C;">近期点评</p>
             </div>
             <div id = "contentcom">
               
             </div>
+            <p id="more" style="text-align: center;">更多评论</p>
 <script type="text/javascript">
-$(document).ready(function(){
-  // $.ajax({
-  //   type="post",
-  //   url:"/index.php/Show/index/comment_index",
-  //   data:{
-  //   productcode:"<?php echo ($product["productcode"]); ?>",
-  //   companycode:"<?php echo ($product["companycode"]); ?>",
-  //   page:1
-  //   },
-  //   dataType="json",
-  //      success:function(callbackdata){   
-  //    alert("success");   
-  //  }
-  // });
 
-
-
-  $.post("/index.php/Show/index/comment_index",{
+function getcomment(page){
+    $.post("/index.php/Show/index/comment_index",{
     productcode:"<?php echo ($product["productcode"]); ?>",
     companycode:"<?php echo ($product["companycode"]); ?>",
-    page:1
+    page:page
     },function(data){
     for(var k=0;k<5;k++)
     {
-        $("#contentcom").append("<div id='div+"+k+"'>"+data[k]['content']+"</div>");
+        $("#contentcom").append("<div class='comtext' id='div+"+k+"'> <p style='font-size:10px;'>"+data[k]['timestamp']+"</p><p>"+data[k]['content']+"</p></div><div class='mui-divider'></div>");
      }
 
 
     }
     );
+}
 
 
+
+$(document).ready(function(){
+  var page = 1;
+getcomment(page);
+$("#more").click(function(){
+  page = page + 1;
+   getcomment(page);
+});
+
+$("#buttonone").click(function(){
+   var textdata =$("#postdata").val();
+       $.post("/index.php/Show/index/comment_post",{
+    productcode:"<?php echo ($product["productcode"]); ?>",
+    companycode:"<?php echo ($product["companycode"]); ?>",
+    data:textdata
+    },function(data){
+      if(data['isdone'] == 1){
+        alert("评论成功!");
+         window.location.reload();
+      }
+      else
+        alert("每个用户只允许评论一次哦！");
+    }
+    );
+});
+
+$("#writecomment").click(function(){
+  $("#textarea").show();
+});
 
 });
 </script>
@@ -187,8 +203,14 @@ $(document).ready(function(){
 
               <div class="info" style="height:40px;">          
                  <div class="title">
-                <img src="/public/image/7.png" class="titleimg">
+                <img src="/public/image/7.png" class="titleimg" id="writecomment">
               </div>
+              </div>
+              <div class="info" style="height:120px;display: none;" id="textarea">          <form>
+                  <textarea class = "writetext" id="postdata"></textarea>
+                  
+                  <div id = "buttonone" style = "float:right;width: 100px;height: 20px;background-color: #46A3FF;color: white;text-align: center;font-family: 黑体;margin-top: 10px;margin-right: 20px;">提交评论</div>
+                  </form>
               </div>
 			<div class = "bottominfo">南京邮电大学®2016</div>
    		 	

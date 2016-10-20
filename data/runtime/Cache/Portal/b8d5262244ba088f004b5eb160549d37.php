@@ -65,8 +65,8 @@ var GV = {
 					<tr>
 						<th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
 						<th width="40">产品代码</th>
-						<th width="80">产品名称</th>
-						<th width="80">种苗名称</th>
+						<th width="80">IP地址</th>
+						<th width="80">内容</th>
 						<th width="80">出品公司</th>
 						<th width="120"><span>添加时间</span></th>
 						<th width="120"><?php echo L('ACTIONS');?></th>
@@ -75,16 +75,15 @@ var GV = {
 				<?php if(is_array($posts)): foreach($posts as $key=>$vo): ?><tr>
 					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="<?php echo ($vo["id"]); ?>"></td>
 					<td><a><?php echo ($vo["productcode"]); ?></a></td>
-					<td><a href="<?php echo U('show/index/index',array('id'=>($code.$vo['productcode'])));?>" target="_blank"><span><?php echo ($vo["name"]); ?></span></a></td>
-					 <td><?php echo ($vo["kindname"]); ?></td>
+					<td><a href="<?php echo U('show/index/index',array('id'=>($code.$vo['productcode'])));?>" target="_blank"><span><?php echo ($vo["ip"]); ?></span></a></td>
+					 <td><?php echo ($vo["content"]); ?></td>
 					<td><?php echo ($name); ?></td>
 					<td><?php echo ($vo["timestamp"]); ?></td>
 					<td>
 						<a href="<?php echo U('AdminPage/edit',array('id'=>($code.$vo['productcode'])));?>"><?php echo L('EDIT');?></a>|
 						<a href="<?php echo U('AdminPage/delete',array('id'=>($code.$vo['productcode'])));?>" class="js-ajax-delete"><?php echo L('DELETE');?></a>|
 						<a href="<?php echo U('AdminPage/qrcode',array('id'=>($vo['companycode'].$vo['productcode'])));?>">二维码</a>|
-						<a href="<?php echo U('AdminPage/batch_index',array('id'=>($vo['companycode'].$vo['productcode'])));?>">批次管理</a>|
-						<a href="<?php echo U('AdminPage/comment_manage',array('id'=>($vo['companycode'].$vo['productcode'])));?>">评论管理</a>
+						<a href="<?php echo U('AdminPage/batch_index',array('id'=>($vo['companycode'].$vo['productcode'])));?>">批次管理</a>
 
 
 

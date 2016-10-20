@@ -72,7 +72,7 @@ var init = function() {
 
           <div class="headtext">
             <h1><?php echo ($product["name"]); ?></h1>
-						<p>上市时间: 2016.8.1 产地: 南京邮电大学</p>
+						<p>上市时间: <?php echo ($batch["outtime"]); ?> 产地: <?php echo ($batch["place"]); ?></p>
 				</div>
  		  </div>
  		   </div>

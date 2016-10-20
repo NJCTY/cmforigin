@@ -25,7 +25,27 @@ class AdminPageController extends AdminbaseController {
 	}
 	//批次显示函数
 	function batch_index(){
-		$admincode = sp_get_current_admin_id();
+		// $admincode = sp_get_current_admin_id();
+		// $dbcompany = M('company');
+		// $cominfo = $dbcompany -> where('admincode ='.$admincode) ->select();
+		// $db = M('batch');
+		// $posts = $db ->where("companycode = '".$cominfo[0]['code']."'")->select();
+		// $dbp = M('product');
+		// $post = $dbp ->where("companycode = '".$cominfo[0]['code']."'")->select();
+		// $this->assign("posts",$posts);
+		// $this->assign("name",$cominfo[0]['name']);
+		// $this->assign("product",$post[0]);
+		// $this->assign("code",$cominfo[0]['code']);
+		if(isset($_GET['id'])){
+		$code = codecheck();
+		$db = M('batch');
+		$data = $db -> where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'")->select();
+			$product = M('product') -> where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'")->select();
+		$this->assign("product",$product[0]);
+		$this->assign('posts',$data);
+		$this->display();	
+	}else{
+				$admincode = sp_get_current_admin_id();
 		$dbcompany = M('company');
 		$cominfo = $dbcompany -> where('admincode ='.$admincode) ->select();
 		$db = M('batch');
@@ -36,7 +56,8 @@ class AdminPageController extends AdminbaseController {
 		$this->assign("name",$cominfo[0]['name']);
 		$this->assign("product",$post[0]);
 		$this->assign("code",$cominfo[0]['code']);
-		$this->display();		
+		$this->display();	
+	}
 	}
 
 	//提交新产品函数
@@ -316,7 +337,13 @@ class AdminPageController extends AdminbaseController {
 			}
 		}
 	}
-	
+
+	function comment_manage(){
+		$code = codecheck();
+		$posts = M('comment') ->where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'") -> select();
+		$this -> assign("posts",$posts);
+		$this ->display();
+	}
 	
 	
 }

@@ -20,10 +20,9 @@
 					<tr>
 						<th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
 						<th width="40">产品代码</th>
-						<th width="40">批次代码</th>
-						<th width="80">产品名称</th>
-						<th width="80">产地</th>
-						<th width="80">生产日期</th>
+						<th width="80">IP地址</th>
+						<th width="80">内容</th>
+						<th width="80">出品公司</th>
 						<th width="120"><span>添加时间</span></th>
 						<th width="120">{:L('ACTIONS')}</th>
 					</tr>
@@ -32,14 +31,17 @@
 				<tr>
 					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.id}"></td>
 					<td><a>{$vo.productcode}</a></td>
-					<td><a>{$vo.batchcode}</a></td>
-					<td><a href="{:U('show/index/index',array('id'=>($code.$vo['productcode'])))}" target="_blank"><span>{$product.name}</span></a></td>
-					 <td>{$vo.place}</td>
-					<td>{$vo.outtime}</td>
+					<td><a href="{:U('show/index/index',array('id'=>($code.$vo['productcode'])))}" target="_blank"><span>{$vo.ip}</span></a></td>
+					 <td>{$vo.content}</td>
+					<td>{$name}</td>
 					<td>{$vo.timestamp}</td>
 					<td>
 						<a href="{:U('AdminPage/edit',array('id'=>($code.$vo['productcode'])))}">{:L('EDIT')}</a>|
-						<a href="{:U('AdminPage/delete',array('id'=>($code.$vo['productcode'])))}" class="js-ajax-delete">{:L('DELETE')}</a>
+						<a href="{:U('AdminPage/delete',array('id'=>($code.$vo['productcode'])))}" class="js-ajax-delete">{:L('DELETE')}</a>|
+						<a href="{:U('AdminPage/qrcode',array('id'=>($vo['companycode'].$vo['productcode'])))}">二维码</a>|
+						<a href="{:U('AdminPage/batch_index',array('id'=>($vo['companycode'].$vo['productcode'])))}">批次管理</a>
+
+
 
 					</td>
 				</tr>

@@ -65,9 +65,10 @@ var GV = {
 					<tr>
 						<th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
 						<th width="40">产品代码</th>
+						<th width="40">批次代码</th>
 						<th width="80">产品名称</th>
-						<th width="80">种苗名称</th>
-						<th width="80">出品公司</th>
+						<th width="80">产地</th>
+						<th width="80">生产日期</th>
 						<th width="120"><span>添加时间</span></th>
 						<th width="120"><?php echo L('ACTIONS');?></th>
 					</tr>
@@ -75,9 +76,10 @@ var GV = {
 				<?php if(is_array($posts)): foreach($posts as $key=>$vo): ?><tr>
 					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="<?php echo ($vo["id"]); ?>"></td>
 					<td><a><?php echo ($vo["productcode"]); ?></a></td>
-					<td><a href="<?php echo U('show/index/index',array('id'=>($code.$vo['productcode'])));?>" target="_blank"><span><?php echo ($vo["name"]); ?></span></a></td>
-					 <td><?php echo ($vo["kindname"]); ?></td>
-					<td><?php echo ($name); ?></td>
+					<td><a><?php echo ($vo["batchcode"]); ?></a></td>
+					<td><a href="<?php echo U('show/index/index',array('id'=>($code.$vo['productcode'])));?>" target="_blank"><span><?php echo ($product["name"]); ?></span></a></td>
+					 <td><?php echo ($vo["place"]); ?></td>
+					<td><?php echo ($vo["outtime"]); ?></td>
 					<td><?php echo ($vo["timestamp"]); ?></td>
 					<td>
 						<a href="<?php echo U('AdminPage/edit',array('id'=>($code.$vo['productcode'])));?>"><?php echo L('EDIT');?></a>|
