@@ -38,9 +38,11 @@
 					<td>
 						<a href="{:U('AdminPage/edit',array('id'=>($code.$vo['productcode'])))}">{:L('EDIT')}</a>|
 						<a href="{:U('AdminPage/delete',array('id'=>($code.$vo['productcode'])))}" class="js-ajax-delete">{:L('DELETE')}</a>|
-						<a href="{:U('AdminPage/qrcode',array('id'=>($vo['companycode'].$vo['productcode'])))}">二维码</a>|
+						<a href="/index.php/Portal/AdminPage/nongyao_index?id={$code}{$vo['productcode']}&type=1">农药管理</a>|
+						<a href="/index.php/Portal/AdminPage/nongyao_index?id={$code}{$vo['productcode']}&type=2">化肥管理</a>|
 						<a href="{:U('AdminPage/batch_index',array('id'=>($vo['companycode'].$vo['productcode'])))}">批次管理</a>|
-						<a href="{:U('AdminPage/comment_manage',array('id'=>($vo['companycode'].$vo['productcode'])))}">评论管理</a>
+						<a href="{:U('AdminPage/comment_manage',array('id'=>($vo['companycode'].$vo['productcode'])))}">评论管理</a>|
+						<a href="/index.php/Portal/AdminPage/image_index?id={$code}{$vo['productcode']}">图片管理</a>
 
 
 

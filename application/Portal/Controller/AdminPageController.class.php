@@ -23,19 +23,97 @@ class AdminPageController extends AdminbaseController {
 			}
 		$this->display();
 	}
+	//批次添加函数
+	function batch_add(){
+		$admincode = sp_get_current_admin_id();
+		$dbcompany = M('company');
+		$cominfo = $dbcompany -> where('admincode ='.$admincode) ->select(); //根据管理员id找到公司信息
+
+		$dbp = M('product');
+		$post = $dbp ->where("companycode = '".$cominfo[0]['code']."'")->select();
+
+		$this -> assign("product",$post);
+		$this->display();
+	}
+	//批次上传函数
+	function batch_post(){
+		$admincode = sp_get_current_admin_id();
+		$dbcompany = M('company');
+		$cominfo = $dbcompany -> where('admincode ='.$admincode) ->select(); //根据管理员id找到公司信息
+		$data['basename'] = $_POST['basename'];
+		$data['place'] = $_POST['place'];
+		$data['baseplace'] = $_POST['baseplace'];
+		$data['outtime'] = $_POST['outtime'];
+		$data['productcode'] = $_POST['productcode'];
+		$data['companycode'] = $cominfo[0]['code'];
+		$data['admincode'] = $admincode;
+		$id = M('batch') -> max('id');
+		$data['batchcode'] = $id + 1 + 100000;
+		if(M('batch')->data($data)->add())
+		{
+				$this->success("添加成功！");
+			} else {
+				$this->error("添加失败！");
+			}
+	}
+	//批次修改上传函数
+		function batch_edit_post(){
+		$admincode = sp_get_current_admin_id();
+		$dbcompany = M('company');
+		$cominfo = $dbcompany -> where('admincode ='.$admincode) ->select(); //根据管理员id找到公司信息
+		$data['basename'] = $_POST['basename'];
+		$data['place'] = $_POST['place'];
+		$data['baseplace'] = $_POST['baseplace'];
+		$data['outtime'] = $_POST['outtime'];
+		if(M('batch')->where("companycode = '".$_POST['companycode']."' and productcode = '".$_POST['productcode']."' and batchcode ='".$_POST['batchcode']."'")->save($data))
+		{
+				$this->success("修改成功！");
+			} else {
+				$this->error("修改失败！");
+			}
+	}
+	//评论删除函数
+	function comment_delete(){
+		$admincode = sp_get_current_admin_id();
+		$dbcompany = M('company');
+		$cominfo = $dbcompany -> where('admincode ='.$admincode) ->select(); //根据管理员id找到公司信息
+		if($cominfo[0]['code']==$_GET['comc']){
+			if(M('comment')->where("companycode = '".$_GET['comc']."' and productcode = '".$_GET['proc']."' and comment_id ='".$_GET['comid']."'")->delete()){
+				$this->success("删除成功！");
+			}else{
+				$this->success("删除失败！");
+			}
+		}else{
+			$this->success("删除失败！");
+		}
+	}
+		//农药函数
+	function nongyao_delete(){
+		$admincode = sp_get_current_admin_id();
+		$dbcompany = M('company');
+		$cominfo = $dbcompany -> where('admincode ='.$admincode) ->select(); //根据管理员id找到公司信息
+		if($cominfo[0]['code']==$_GET['comc']){
+			if(M('nongyao')->where("companycode = '".$_GET['comc']."' and productcode = '".$_GET['proc']."' and id ='".$_GET['comid']."'")->delete()){
+				$this->success("删除成功！");
+			}else{
+				$this->success("删除失败！");
+			}
+		}else{
+			$this->success("删除失败！");
+		}
+	}
+	//批次修改页面
+	function batch_edit(){
+		$code = codecheck();
+		$batch = M('batch') -> where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."' and batchcode ='".$code['batchcode']."'")->select();
+		$this->assign("batch",$batch[0]);
+
+		$this->display();
+	}
+
+
 	//批次显示函数
 	function batch_index(){
-		// $admincode = sp_get_current_admin_id();
-		// $dbcompany = M('company');
-		// $cominfo = $dbcompany -> where('admincode ='.$admincode) ->select();
-		// $db = M('batch');
-		// $posts = $db ->where("companycode = '".$cominfo[0]['code']."'")->select();
-		// $dbp = M('product');
-		// $post = $dbp ->where("companycode = '".$cominfo[0]['code']."'")->select();
-		// $this->assign("posts",$posts);
-		// $this->assign("name",$cominfo[0]['name']);
-		// $this->assign("product",$post[0]);
-		// $this->assign("code",$cominfo[0]['code']);
 		if(isset($_GET['id'])){
 		$code = codecheck();
 		$db = M('batch');
@@ -45,13 +123,14 @@ class AdminPageController extends AdminbaseController {
 		$this->assign('posts',$data);
 		$this->display();	
 	}else{
-				$admincode = sp_get_current_admin_id();
+		$admincode = sp_get_current_admin_id();
 		$dbcompany = M('company');
 		$cominfo = $dbcompany -> where('admincode ='.$admincode) ->select();
 		$db = M('batch');
 		$posts = $db ->where("companycode = '".$cominfo[0]['code']."'")->select();
 		$dbp = M('product');
 		$post = $dbp ->where("companycode = '".$cominfo[0]['code']."'")->select();
+		$post[0]['name'] = "全部产品";
 		$this->assign("posts",$posts);
 		$this->assign("name",$cominfo[0]['name']);
 		$this->assign("product",$post[0]);
@@ -305,7 +384,27 @@ class AdminPageController extends AdminbaseController {
 					$this->error("删除失败！");
 				}
 	}
-	
+
+	function batch_delete(){
+		$code = codecheck(); //分解条码
+		$com = getcompany($code['companycode']); //获得公司信息
+		if($com[0]['admincode'] == sp_get_current_admin_id()){ //判断此管理员是否有权限删除本产品
+			if($info = M('batch') ->where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."' and batchcode ='".$code['batchcode']."'") -> delete()){ //删除
+				$isdone = 1;
+			}else{
+				$isdone = 0;
+			}
+		}else{
+			echo "无权限，请联系超级管理员。";
+			$isdone = 0;
+		}
+			if ($isdone) {	//向前端返回结果
+					$this->success("删除成功！");
+				} else {
+					$this->error("删除失败！");
+				}
+	}
+
 	function restore(){
 		if(isset($_GET['id'])){
 			$id = intval(I("get.id"));
@@ -337,13 +436,146 @@ class AdminPageController extends AdminbaseController {
 			}
 		}
 	}
-
+//评论管理函数
 	function comment_manage(){
 		$code = codecheck();
+						$com = getcompany($code['companycode']); //获得公司信息
+		if($com[0]['admincode'] == sp_get_current_admin_id()){ //判断此管理员是否有权限
 		$posts = M('comment') ->where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'") -> select();
 		$this -> assign("posts",$posts);
 		$this ->display();
+	}else{
+		$this->error("无权限进行此操作");
+	}
+
+}
+//农药肥料post函数
+	function nongyao_post(){
+		$admincode = sp_get_current_admin_id();
+		$dbcompany = M('company');
+		$cominfo = $dbcompany -> where('admincode ='.$admincode) ->select(); //根据管理员id找到公司信息
+		$data['name'] = $_POST['nongyaoname'];
+		$data['addtime'] = $_POST['addtime'];
+		$data['type'] = $_POST['type'];
+		$data['productcode'] = $_POST['productcode'];
+		$data['companycode'] = $cominfo[0]['code'];
+		if($_POST['companycode'] == $cominfo[0]['code']){
+		if(M('nongyao')->data($data)->add())
+		{
+			$this->success("添加成功!");
+		} 
+		else{
+			$this->error("添加失败！");
+			}
+		}else{
+			$this->error("添加失败！");
+			}
+	}
+//农药肥料添加函数
+	function nongyao_add(){
+		if($_GET['type'] == 1){
+			$type['name'] = "农药";
+			$type['id'] = 1;
+		}
+		else{
+			$type['name'] = "肥料";
+			$type['id'] = 2;
+		}
+
+		$product = M('product')->where("companycode = '".$_GET['comc']."' and productcode = '".$_GET['proc']."'")->select();
+		$this->assign("product",$product[0]);
+
+
+
+		$this->assign("type",$type);
+		$this->display();
+	}
+//农药肥料显示函数
+	function nongyao_index(){
+		$code = codecheck();
+				$com = getcompany($code['companycode']); //获得公司信息
+		if($com[0]['admincode'] == sp_get_current_admin_id()){ //判断此管理员是否有权限
+				$data = M('nongyao') -> where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."' and type = ".$_GET['type']) ->select();
+				$product = M('product') -> where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'") ->select();
+				if($_GET['type']==1){
+					$product[0]['type'] = "农药";
+					$product[0]['typenum'] = 1;
+				}
+				else{
+					$product[0]['type'] = "化肥";
+					$product[0]['typenum'] = 2;
+				}
+					$this->assign("posts",$data);
+					$this->assign("product",$product[0]);
+
+		$this->display();
+	}else{
+		$this->error("无权限进行此操作");
+	}
+}
+
+//图片管理函数
+	function image_index(){
+		$code = codecheck();
+				$com = getcompany($code['companycode']); //获得公司信息
+		if($com[0]['admincode'] == sp_get_current_admin_id()){ //判断此管理员是否有权限
+				$data = M('image') -> where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'") ->select();
+				$product = M('product') -> where("companycode = '".$code['companycode']."' and productcode = '".$code['productcode']."'") ->select();
+
+					$this->assign("posts",$data);
+					$this->assign("product",$product[0]);
+
+		$this->display();
+	}else{
+		$this->error("无权限进行此操作");
+	}
+	}
+	function image_delete(){
+		$admincode = sp_get_current_admin_id();
+		$dbcompany = M('company');
+		$cominfo = $dbcompany -> where('admincode ='.$admincode) ->select(); //根据管理员id找到公司信息
+		if($cominfo[0]['code']==$_GET['comc']){
+			if(M('image')->where("companycode = '".$_GET['comc']."' and productcode = '".$_GET['proc']."' and id ='".$_GET['comid']."'")->delete()){
+				$this->success("删除成功！");
+			}else{
+				$this->success("删除失败！");
+			}
+		}else{
+			$this->success("删除失败！");
+		}
+	}
+	function image_add(){
+		$product = M('product')->where("companycode = '".$_GET['comc']."' and productcode = '".$_GET['proc']."'")->select();
+		$this->assign("product",$product[0]);
+		$this->display();
+
+	}
+	function image_post(){
+				if (IS_POST) {
+			           $upload = new \Think\Upload();// 实例化上传类
+    $upload->maxSize   =     3145728 ;// 设置附件上传大小
+    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+    $upload->rootPath  =     './Uploads/'; // 设置附件上传根目录
+    $upload->savePath  =     ''; // 设置附件上传（子）目录
+    // 上传文件 
+    $info   =   $upload->upload();
+    if(!$info) {// 上传错误提示错误信息
+        $this->error($upload->getError());
+        }
+        else{
+			 foreach($info as $file){
+                 $img ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['savepath'].$file['savename'];
+                                    }
+             $data['src'] = $img;
+             $data['productcode'] = $_POST['productcode'];
+             $data['companycode'] = $_POST['companycode'];
+        }
+        if(M('image')->data($data)->add()){
+        	$this->success("上传成功");
+        }else{
+        	$this->error("上传错误");
+        }
 	}
 	
-	
+}
 }

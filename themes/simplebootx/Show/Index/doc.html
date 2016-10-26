@@ -35,7 +35,7 @@ var init = function() {
             });
         }
     });
-        var address = "中国,南京,栖霞区,文苑路9号";
+        var address = "{$batch.baseplace}";
     //通过getLocation();方法获取位置信息值
     geocoder.getLocation(address);
 }
@@ -144,6 +144,16 @@ $("#kindcontainer").css("height","250px");
 $("#kindcontainer").css("height","50px");
 }
   });
+if({$nongyaoisset}){
+
+}else{
+  $("#nongyaozero").show();
+}
+if({$feiliaoisset}){
+
+}else{
+  $("#feiliaozero").show();
+}
 });
 </script>
 
@@ -158,13 +168,13 @@ $("#kindcontainer").css("height","50px");
   			  <div class="info"  style="height:250px;" id="mapcontainer">
   			  		<div class="title docmap" >
   			  			<img src="__PUBLIC__/image/8.png" class="titleimg" id="divmap" >
-                <h2 class="map">南京文苑路基地</h2>
+                <h2 class="map">{$batch.basename}</h2>
                 
 
   			  		</div>
               <div id="container" class="mapimg" ></div>
           </div>
-          <div class="info" style="height:250px;overflow:hidden;" id="imgcontainer">
+          <div class="info" style="height:270px;overflow:hidden;" id="imgcontainer">
               <div class="title"  style="background-color:rgb(24,114,222);">
                 <img src="__PUBLIC__/image/11.png" class="titleimg" id="divimg">
               </div>
@@ -184,26 +194,50 @@ $("#kindcontainer").css("height","50px");
                  </div>
                </div>
               </div>
+              <a href="__ROOT__/index.php/Show/Index/morepic?id={$product.companycode}{$product.productcode}{$batch.batchcode}" style="text-align: center;">更多图片</a>
           </div>
+
    <div class="info" style="height:250px;" id="fncontainer">
 
               <div class="title">
                 <img src="__PUBLIC__/image/13.png" class="titleimg" id="divfn">
               </div>
               <div id="feiliao">
-                <div style="float:left;font-family:黑体;margin-top:20px;margin-left:45px;" >
+                <div style="float:left;font-family:黑体;margin-top:20px;margin-left:45px;" > 
                   <h1 id="flagthree">肥料</h1>
                 </div>
-                <div style="float:left;font-family:黑体;font-size:3em;margin-top:20px;color:#D1D2D3;margin-left:45px;" id="feiliaozero">
+                <div style="float:right;width:65%;height:100px;">
+                  <ul style="float: left;width: 100%;height: 65px;">
+                 <foreach name="feiliao" item="vo"> 
+                  <li style="width: 110px; float: left; margin-top: 9px;font-size: 15px;font-family: 黑体;">
+                   {$vo.name}
+                  </li>
+                  </foreach>
+                 </ul>
+                </div>
+
+                <div style="float:left;font-family:黑体;font-size:3em;margin-top:20px;display: none;color:#D1D2D3;margin-left:45px;" id="feiliaozero">
                   零使用
                 </div>
+
+
               </div>      
               <div class="mui-divider"></div>
               <div id="feiliao">
                 <div style="float:left;font-family:黑体;margin-top:20px;margin-left:45px;" >
                   <h1>农药</h1>
                 </div>
-                <div style="float:left;font-family:黑体;font-size:3em;margin-top:20px;color:#D1D2D3;margin-left:45px;" id="nongyaozero">
+                <div style="float:right;width:65%;height:100px;">
+                  <ul style="float: left;width: 100%;height: 65px;">
+                 <foreach name="nongyao" item="vo"> 
+                  <li style="width: 110px; float: left; margin-top: 9px;font-size: 15px;font-family: 黑体;">
+                   {$vo.name}
+                  </li>
+                  </foreach>
+                 </ul>
+                </div>
+
+                <div style="float:left;font-family:黑体;font-size:3em;margin-top:20px;color:#D1D2D3;margin-left:45px;display: none;" id="nongyaozero">
                   零使用
                 </div>
               </div>
@@ -249,7 +283,7 @@ var myChart = new Chart(ctx, {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-      data :[1,2,3,4,5,6,7]
+      data :{$product.guangzhao}
     },
     {
       label: "平均气温（℃）",
@@ -270,7 +304,7 @@ var myChart = new Chart(ctx, {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-      data : [2,3,4,3,2,2,3]
+      data : {$product.qiwen}
     }
   ]
     }
@@ -304,7 +338,7 @@ var myChart = new Chart(ctx, {
               <p class="infotext">{$product["kindintroduction"]}</p>
               </div>      
           </div>
-
+<br>
 			<div class = "bottominfo">南京邮电大学®2016</div>
    		 	
     </body>

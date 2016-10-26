@@ -2,17 +2,7 @@
 </head>
 <body>
 	<div class="wrap js-check-wrap">
-		<ul class="nav nav-tabs">
-			<li class="active"><a href="{:U('AdminPage/index')}">产品管理</a></li>
-			<li><a href="{:U('AdminPage/add')}">添加产品</a></li>
-		</ul>
-		<!-- <form class="well form-search" method="post" action="{:U('AdminPage/index')}">
-			{:L('POST_DATE')}
-			<input type="text" name="start_time" class="js-date" value="{$formget.start_time}" style="width: 80px;" autocomplete="off">-
-			<input autocomplete="off" type="text" class="js-date" name="end_time" value="{$formget.end_time}" style="width: 80px;"> {:L('KEYWORD')}
-			<input type="text" name="keyword" style="width: 200px;" value="{$formget.keyword}" placeholder="{:L('PLEASE_ENTER_KEYWORD')}">
-			<button class="btn btn-primary">{:L('SEARCH')}</button>
-		</form> -->
+
 		<form class="js-ajax-form" method="post">
 
 			<table class="table table-hover table-bordered table-list">
@@ -36,11 +26,7 @@
 					<td>{$name}</td>
 					<td>{$vo.timestamp}</td>
 					<td>
-						<a href="{:U('AdminPage/edit',array('id'=>($code.$vo['productcode'])))}">{:L('EDIT')}</a>|
-						<a href="{:U('AdminPage/delete',array('id'=>($code.$vo['productcode'])))}" class="js-ajax-delete">{:L('DELETE')}</a>|
-						<a href="{:U('AdminPage/qrcode',array('id'=>($vo['companycode'].$vo['productcode'])))}">二维码</a>|
-						<a href="{:U('AdminPage/batch_index',array('id'=>($vo['companycode'].$vo['productcode'])))}">批次管理</a>
-
+						<a href="/index.php/Portal/AdminPage/comment_delete?comc={$vo['companycode']}&proc={$vo['productcode']}&comid={$vo['comment_id']}" class="js-ajax-delete">{:L('DELETE')}</a>
 
 
 					</td>

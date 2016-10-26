@@ -5,7 +5,7 @@
 <!-- Set render engine for 360 browser -->
 <meta name="renderer" content="webkit">
 <meta charset="utf-8">
-<title>农产品溯源系统<?php echo L('ADMIN_CENTER');?></title>
+<title>南京邮电大学盐城大数据研究院农产品溯源系统<?php echo L('ADMIN_CENTER');?></title>
 
 <meta name="description" content="This is page-header (.page-header &gt; h1)">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -143,11 +143,11 @@ right: initial !important;}
 			<div class="container-fluid">
 				<a href="<?php echo U('index/index');?>" class="brand"> <small> 
 				<img src="/admin/themes/simplebootx/Public/assets/images/logo-18.png">
-						农产品溯源系统<?php echo L('ADMIN_CENTER');?>
+						南京邮电大学盐城大数据研究院农产品溯源系统<?php echo L('ADMIN_CENTER');?>
 				</small>
 				</a>
 				<div class="pull-left nav_shortcuts" >
-					
+					<!-- 
 					<a class="btn btn-small btn-warning" href="/" title="<?php echo L('WEBSITE_HOME_PAGE');?>" target="_blank">
 						<i class="fa fa-home"></i>
 					</a>
@@ -162,7 +162,7 @@ right: initial !important;}
 
 					<?php if(sp_auth_check(sp_get_current_admin_id(),'admin/setting/clearcache')): ?><a class="btn btn-small btn-danger" href="javascript:openapp('<?php echo U('admin/setting/clearcache');?>','index_clearcache','<?php echo L('ADMIN_SETTING_CLEARCACHE');?>');" title="<?php echo L('ADMIN_SETTING_CLEARCACHE');?>">
 						<i class="fa fa-trash-o"></i>
-					</a><?php endif; ?>
+					</a><?php endif; ?> -->
 				</div>
 				<ul class="nav simplewind-nav pull-right">
 					<li class="light-blue">

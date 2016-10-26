@@ -3,8 +3,8 @@
 <body>
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="{:U('AdminPage/index')}">产品管理</a></li>
-			<li><a href="{:U('AdminPage/add')}">添加产品</a></li>
+			<li class="active"><a href="{:U('AdminPage/batch_index')}">批次管理</a></li>
+			<li><a href="{:U('AdminPage/batch_add')}">添加批次</a></li>
 		</ul>
 		<!-- <form class="well form-search" method="post" action="{:U('AdminPage/index')}">
 			{:L('POST_DATE')}
@@ -13,6 +13,11 @@
 			<input type="text" name="keyword" style="width: 200px;" value="{$formget.keyword}" placeholder="{:L('PLEASE_ENTER_KEYWORD')}">
 			<button class="btn btn-primary">{:L('SEARCH')}</button>
 		</form> -->
+		<table class="table table-bordered">
+		<tr>
+			<td>当前产品：{$product.name}</td>
+		</tr>
+		</table>
 		<form class="js-ajax-form" method="post">
 
 			<table class="table table-hover table-bordered table-list">
@@ -21,7 +26,7 @@
 						<th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
 						<th width="40">产品代码</th>
 						<th width="40">批次代码</th>
-						<th width="80">产品名称</th>
+						<th width="80">生产基地名称</th>
 						<th width="80">产地</th>
 						<th width="80">生产日期</th>
 						<th width="120"><span>添加时间</span></th>
@@ -31,15 +36,16 @@
 				<foreach name="posts" item="vo">
 				<tr>
 					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.id}"></td>
-					<td><a>{$vo.productcode}</a></td>
-					<td><a>{$vo.batchcode}</a></td>
-					<td><a href="{:U('show/index/index',array('id'=>($code.$vo['productcode'])))}" target="_blank"><span>{$product.name}</span></a></td>
+					<td><a href="{:U('show/index/index',array('id'=>($code.$vo['productcode'])))}" target="_blank">{$vo.productcode}</a></td>
+					<td><a href="{:U('show/index/index',array('id'=>($code.$vo['productcode'].$vo['batchcode'])))}" target="_blank">{$vo.batchcode}</a></td>
+					<td><span>{$vo.basename}</span></td>
 					 <td>{$vo.place}</td>
 					<td>{$vo.outtime}</td>
 					<td>{$vo.timestamp}</td>
 					<td>
-						<a href="{:U('AdminPage/edit',array('id'=>($code.$vo['productcode'])))}">{:L('EDIT')}</a>|
-						<a href="{:U('AdminPage/delete',array('id'=>($code.$vo['productcode'])))}" class="js-ajax-delete">{:L('DELETE')}</a>
+						<a href="{:U('AdminPage/batch_edit',array('id'=>($code.$vo['productcode'].$vo['batchcode'])))}">{:L('EDIT')}</a>|
+						<a href="/index.php/Portal/AdminPage/batch_delete?id={$code}{$vo['productcode']}{$vo['batchcode']}" class="js-ajax-delete">{:L('DELETE')}</a>|
+						<a href="{:U('AdminPage/qrcode',array('id'=>($vo['companycode'].$vo['productcode'].$vo['batchcode'])))}">生成二维码</a>
 
 					</td>
 				</tr>

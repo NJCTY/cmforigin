@@ -45,7 +45,7 @@
 
 					<div class="headtext">
 						<h1>{$product.name}</h1>
-						<p>上市时间: 2016.8.1 产地: 南京邮电大学</p>
+						<p>上市时间: {$batch.outtime} 产地: {$batch.place}</p>
 				</div>
  		  </div>
  		   </div>
@@ -58,7 +58,7 @@
 </div>
 </div>
 
-  			  <div class="info">
+  			  <div class="info" style="overflow: visible;height: auto;">
   			  		<div class="title">
   			  			<img src="__PUBLIC__/image/2.png" class="titleimg">
   			  		</div>
@@ -76,7 +76,7 @@
   			  		  </div>
 
   			  		</div>
-  			  		<div class="companyinfo" style="overflow: visible;">
+  			  		<div class="companyinfo" style="overflow: visible;height: auto;">
   			  		<div>公司介绍</div>
 <div class="mui-divider">
 	
@@ -84,6 +84,7 @@
   			  		{$company["introduction"]}
   			  		</div>  		
   			  </div>
+          <br>
 			<div class = "bottominfo">南京邮电大学®2016</div>
    		 	
     </body>

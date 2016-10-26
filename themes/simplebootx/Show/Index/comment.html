@@ -60,7 +60,7 @@
 
           <div class="headtext">
             <h1>{$product.name}</h1>
-						<p>上市时间: 2016.8.1 产地: 南京邮电大学</p>
+						<p>上市时间: {$batch.outtime} 产地: {$batch.place}</p>
 				</div>
  		  </div>
  		   </div>
@@ -142,9 +142,7 @@ function rat(star,result,m){
               <p style= "color:#8A8B8C;">近期点评</p>
             </div>
             <div id = "contentcom">
-              
             </div>
-            <p id="more" style="text-align: center;">更多评论</p>
 <script type="text/javascript">
 
 function getcomment(page){
@@ -155,7 +153,7 @@ function getcomment(page){
     },function(data){
     for(var k=0;k<5;k++)
     {
-        $("#contentcom").append("<div class='comtext' id='div+"+k+"'> <p style='font-size:10px;'>"+data[k]['timestamp']+"</p><p>"+data[k]['content']+"</p></div><div class='mui-divider'></div>");
+        $("#contentcom").append("<div class='comtext' id='div+"+k+"'> <p >"+data[k]['content']+"</p><p style='font-size:10px;margin-left:70%;'>"+data[k]['timestamp']+"</p></div><div class='mui-divider'></div>");
      }
 
 
@@ -175,6 +173,8 @@ $("#more").click(function(){
 
 $("#buttonone").click(function(){
    var textdata =$("#postdata").val();
+   var currentlength =$("#postdata").val().length; 
+   if(currentlength<=50){
        $.post("/index.php/Show/index/comment_post",{
     productcode:"{$product.productcode}",
     companycode:"{$product.companycode}",
@@ -187,11 +187,15 @@ $("#buttonone").click(function(){
       else
         alert("每个用户只允许评论一次哦！");
     }
-    );
+    );}
+       else
+        alert("字数请不要超过50字谢谢！");
 });
 
 $("#writecomment").click(function(){
   $("#textarea").show();
+  $('html, body, .content').animate({scrollTop: $(document).height()}, 300); 
+return false; 
 });
 
 });
@@ -199,7 +203,8 @@ $("#writecomment").click(function(){
 
 
               </div>
-
+              <div>            <p id="more" style="text-align: center;">更多评论</p>
+</div>
 
               <div class="info" style="height:40px;">          
                  <div class="title">
@@ -212,6 +217,7 @@ $("#writecomment").click(function(){
                   <div id = "buttonone" style = "float:right;width: 100px;height: 20px;background-color: #46A3FF;color: white;text-align: center;font-family: 黑体;margin-top: 10px;margin-right: 20px;">提交评论</div>
                   </form>
               </div>
+              <br>
 			<div class = "bottominfo">南京邮电大学®2016</div>
    		 	
     </body>
