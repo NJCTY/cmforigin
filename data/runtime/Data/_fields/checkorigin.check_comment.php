@@ -1,0 +1,1 @@
+a:8:{i:0;s:10:"comment_id";i:1;s:2:"ip";i:2;s:7:"content";i:3;s:11:"productcode";i:4;s:11:"companycode";i:5;s:9:"timestamp";s:3:"_pk";s:10:"comment_id";s:5:"_type";a:6:{s:10:"comment_id";s:7:"int(11)";s:2:"ip";s:12:"varchar(255)";s:7:"content";s:4:"text";s:11:"productcode";s:11:"varchar(16)";s:11:"companycode";s:11:"varchar(16)";s:9:"timestamp";s:9:"timestamp";}}

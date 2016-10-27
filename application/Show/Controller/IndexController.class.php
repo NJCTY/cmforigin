@@ -171,7 +171,7 @@ $this -> assign('batch',$batch[0]);
         foreach ($dbstar as $key => $value) {
             $count = $count + $value['level'];
         }
-        $result = 100*($count / ($total * 5));
+        $result = 100*(int)($count / ($total * 5));
         $this -> assign('percent',$result);
         $this -> assign('star',$star);
         $this -> assign('company',$company[0]);

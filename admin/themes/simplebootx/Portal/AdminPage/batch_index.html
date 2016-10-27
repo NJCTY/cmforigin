@@ -37,14 +37,14 @@
 				<tr>
 					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.id}"></td>
 					<td><a href="{:U('show/index/index',array('id'=>($code.$vo['productcode'])))}" target="_blank">{$vo.productcode}</a></td>
-					<td><a href="{:U('show/index/index',array('id'=>($code.$vo['productcode'].$vo['batchcode'])))}" target="_blank">{$vo.batchcode}</a></td>
+					<td><a href="{:U('show/index/index',array('id'=>($vo['companycode'].$vo['productcode'].$vo['batchcode'])))}" target="_blank">{$vo.batchcode}</a></td>
 					<td><span>{$vo.basename}</span></td>
 					 <td>{$vo.place}</td>
 					<td>{$vo.outtime}</td>
 					<td>{$vo.timestamp}</td>
 					<td>
-						<a href="{:U('AdminPage/batch_edit',array('id'=>($code.$vo['productcode'].$vo['batchcode'])))}">{:L('EDIT')}</a>|
-						<a href="/index.php/Portal/AdminPage/batch_delete?id={$code}{$vo['productcode']}{$vo['batchcode']}" class="js-ajax-delete">{:L('DELETE')}</a>|
+						<a href="{:U('AdminPage/batch_edit',array('id'=>($vo['companycode'].$vo['productcode'].$vo['batchcode'])))}">{:L('EDIT')}</a>|
+						<a href="/index.php/Portal/AdminPage/batch_delete?id={$vo['companycode']}{$vo['productcode']}{$vo['batchcode']}" class="js-ajax-delete">{:L('DELETE')}</a>|
 						<a href="{:U('AdminPage/qrcode',array('id'=>($vo['companycode'].$vo['productcode'].$vo['batchcode'])))}">生成二维码</a>
 
 					</td>

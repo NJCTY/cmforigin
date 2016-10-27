@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
     <head>
       <meta charset="utf-8">
@@ -8,14 +8,14 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1">
   
-        <title>{$company.name}</title>
-        <link rel="stylesheet" href="__PUBLIC__/bower_components/weui/dist/style/weui.min.css"/>
-        <link rel="stylesheet" href="__PUBLIC__/css/origin.css">
-          <link rel="stylesheet" href="__PUBLIC__/assets/css/amazeui.min.css">
+        <title><?php echo ($company["name"]); ?></title>
+        <link rel="stylesheet" href="/public/bower_components/weui/dist/style/weui.min.css"/>
+        <link rel="stylesheet" href="/public/css/origin.css">
+          <link rel="stylesheet" href="/public/assets/css/amazeui.min.css">
  <!--          MUI -->
-<link href="__PUBLIC__/mui-0.7.5/css/mui.min.css" rel="stylesheet" type="text/css" />
+<link href="/public/mui-0.7.5/css/mui.min.css" rel="stylesheet" type="text/css" />
 
-<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="/public/js/jquery.js"></script>
 <script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
 <script>
 var geocoder,map,marker = null;
@@ -35,12 +35,12 @@ var init = function() {
             });
         }
     });
-        var address = "{$batch.baseplace}";
+        var address = "<?php echo ($batch["baseplace"]); ?>";
     //通过getLocation();方法获取位置信息值
     geocoder.getLocation(address);
 }
 </script>
-<script type="text/javascript" src="__PUBLIC__/js/Chart.min.js"></script>
+<script type="text/javascript" src="/public/js/Chart.min.js"></script>
           <!-- Set render engine for 360 browser -->
   <meta name="renderer" content="webkit">
 
@@ -62,26 +62,26 @@ var init = function() {
   <!-- Tile icon for Win8 (144x144 + tile color) -->
   <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
   <meta name="msapplication-TileColor" content="#0e90d2">
-  <link rel="stylesheet" href="__PUBLIC__/assets/css/app.css">
+  <link rel="stylesheet" href="/public/assets/css/app.css">
     </head>
     <body class="bg" onload="init()">
     	
     	<div>
    			 <div class="header">
-        <img src="{$product.imgbg}" id="headimg">
+        <img src="<?php echo ($product["imgbg"]); ?>" id="headimg">
 
           <div class="headtext">
-            <h1>{$product.name}</h1>
-						<p>上市时间: {$batch.outtime} 产地: {$batch.place}</p>
+            <h1><?php echo ($product["name"]); ?></h1>
+						<p>上市时间: <?php echo ($batch["outtime"]); ?> 产地: <?php echo ($batch["place"]); ?></p>
 				</div>
  		  </div>
  		   </div>
  		   				<div class="menu">
 <div class="am-btn-group am-btn-group-justify">
- <a type="button" class="am-btn am-btn-success am-active" href="__ROOT__/index.php/Show/index/index?id={$origincode}">档案</a>
- <a type="button" class="am-btn am-btn-success" href="__ROOT__/index.php/Show/index/video?id={$origincode}">视频</a>
-  <a type="button" class="am-btn am-btn-success" href="__ROOT__/index.php/Show/index/comment?id={$origincode}">评分</a>
-   <a type="button" class="am-btn am-btn-success" href="__ROOT__/index.php/Show/index/comp?id={$origincode}">简介</a>
+ <a type="button" class="am-btn am-btn-success am-active" href="/index.php/Show/index/index?id=<?php echo ($origincode); ?>">档案</a>
+ <a type="button" class="am-btn am-btn-success" href="/index.php/Show/index/video?id=<?php echo ($origincode); ?>">视频</a>
+  <a type="button" class="am-btn am-btn-success" href="/index.php/Show/index/comment?id=<?php echo ($origincode); ?>">评分</a>
+   <a type="button" class="am-btn am-btn-success" href="/index.php/Show/index/comp?id=<?php echo ($origincode); ?>">简介</a>
 </div>
 </div>
 <script type="text/javascript">
@@ -144,12 +144,12 @@ $("#kindcontainer").css("height","250px");
 $("#kindcontainer").css("height","50px");
 }
   });
-if({$nongyaoisset}){
+if(<?php echo ($nongyaoisset); ?>){
   $("#nongyaoil").show();
 }else{
   $("#nongyaozero").show();
 }
-if({$feiliaoisset}){
+if(<?php echo ($feiliaoisset); ?>){
   $("#feiliaoul").show();
 }else{
   $("#feiliaozero").show();
@@ -167,8 +167,8 @@ if({$feiliaoisset}){
 
   			  <div class="info"  style="height:250px;" id="mapcontainer">
   			  		<div class="title docmap" >
-  			  			<img src="__PUBLIC__/image/8.png" class="titleimg" id="divmap" >
-                <h2 class="map">{$batch.basename}</h2>
+  			  			<img src="/public/image/8.png" class="titleimg" id="divmap" >
+                <h2 class="map"><?php echo ($batch["basename"]); ?></h2>
                 
 
   			  		</div>
@@ -176,31 +176,31 @@ if({$feiliaoisset}){
           </div>
           <div class="info" style="height:270px;overflow:hidden;" id="imgcontainer">
               <div class="title"  style="background-color:rgb(24,114,222);">
-                <img src="__PUBLIC__/image/11.png" class="titleimg" id="divimg">
+                <img src="/public/image/11.png" class="titleimg" id="divimg">
               </div>
               <div>
                 <div class="imgone">
-                  <img src="{$product.imgone}" class="oneimg" id="flagtwo">
+                  <img src="<?php echo ($product["imgone"]); ?>" class="oneimg" id="flagtwo">
                 </div>
                  <div class="imgsecond">
                   <div class="imgtwo">
-                    <img src="{$product.imgtwo}" class="twoimg" >
+                    <img src="<?php echo ($product["imgtwo"]); ?>" class="twoimg" >
                   </div>
                  <div class="imgtwo">
-                    <img src="{$product.imgthree}" class="twoimg">                
+                    <img src="<?php echo ($product["imgthree"]); ?>" class="twoimg">                
                  </div>
                 <div class="imgtwo">
-                    <img src="{$product.imgfour}" class="twoimg">                
+                    <img src="<?php echo ($product["imgfour"]); ?>" class="twoimg">                
                  </div>
                </div>
               </div>
-              <a href="__ROOT__/index.php/Show/Index/morepic?id={$product.companycode}{$product.productcode}{$batch.batchcode}" style="text-align: center;">更多图片</a>
+              <a href="/index.php/Show/Index/morepic?id=<?php echo ($product["companycode"]); echo ($product["productcode"]); echo ($batch["batchcode"]); ?>" style="text-align: center;">更多图片</a>
           </div>
 
    <div class="info" style="height:250px;" id="fncontainer">
 
               <div class="title">
-                <img src="__PUBLIC__/image/13.png" class="titleimg" id="divfn">
+                <img src="/public/image/13.png" class="titleimg" id="divfn">
               </div>
               <div id="feiliao">
                 <div style="float:left;font-family:黑体;margin-top:20px;margin-left:45px;" > 
@@ -208,11 +208,9 @@ if({$feiliaoisset}){
                 </div>
                 <div style="float:right;width:65%;height:100px;">
                   <ul style="float: left;width: 100%;height: 65px;display: none;" id="feiliaoul">
-                 <foreach name="feiliao" item="vo"> 
-                  <li style="width: 110px; float: left; margin-top: 9px;font-size: 15px;font-family: 黑体;">
-                   {$vo.name}
-                  </li>
-                  </foreach>
+                 <?php if(is_array($feiliao)): foreach($feiliao as $key=>$vo): ?><li style="width: 110px; float: left; margin-top: 9px;font-size: 15px;font-family: 黑体;">
+                   <?php echo ($vo["name"]); ?>
+                  </li><?php endforeach; endif; ?>
                  </ul>
                                  <div style="float:left;font-family:黑体;font-size:3em;margin-top:20px;display: none;color:#D1D2D3;margin-left:45px;" id="feiliaozero">
                   零使用
@@ -230,11 +228,9 @@ if({$feiliaoisset}){
                 </div>
                 <div style="float:right;width:65%;height:100px;">
                   <ul style="float: left;width: 100%;height: 65px;display: none;" id="nongyaoul">
-                 <foreach name="nongyao" item="vo"> 
-                  <li style="width: 110px; float: left; margin-top: 9px;font-size: 15px;font-family: 黑体;">
-                   {$vo.name}
-                  </li>
-                  </foreach>
+                 <?php if(is_array($nongyao)): foreach($nongyao as $key=>$vo): ?><li style="width: 110px; float: left; margin-top: 9px;font-size: 15px;font-family: 黑体;">
+                   <?php echo ($vo["name"]); ?>
+                  </li><?php endforeach; endif; ?>
                  </ul>
                                  <div style="float:left;font-family:黑体;font-size:3em;margin-top:20px;color:#D1D2D3;margin-left:45px;display: none;" id="nongyaozero">
                   零使用
@@ -255,7 +251,7 @@ if({$feiliaoisset}){
    <div class="info" style="height:250px;" id="qxcontainer">
 
               <div class="title">
-                <img src="__PUBLIC__/image/12.png" class="titleimg" id="divqx">
+                <img src="/public/image/12.png" class="titleimg" id="divqx">
               </div>
               <div id="flagfour"></div>
               <canvas id="myChart" style="width:100%;height:200px;"></canvas>
@@ -285,7 +281,7 @@ var myChart = new Chart(ctx, {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-      data :{$product.guangzhao}
+      data :<?php echo ($product["guangzhao"]); ?>
     },
     {
       label: "平均气温（℃）",
@@ -306,7 +302,7 @@ var myChart = new Chart(ctx, {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-      data : {$product.qiwen}
+      data : <?php echo ($product["qiwen"]); ?>
     }
   ]
     }
@@ -316,18 +312,18 @@ var myChart = new Chart(ctx, {
    </div>
           <div class="info" style="height:250px;" id="kindcontainer">
               <div class="title">
-                <img src="__PUBLIC__/image/10.png" class="titleimg" id="divkind">
+                <img src="/public/image/10.png" class="titleimg" id="divkind">
               </div>
               <div class="companyinfo" style="height:110px;" >
       
-                <img class="am-circle companyimg" id="flagfive" src="{$product.imgbg}" width="90" height="90" style="border:1px solid #D1D2D3;" />
+                <img class="am-circle companyimg" id="flagfive" src="<?php echo ($product["imgbg"]); ?>" width="90" height="90" style="border:1px solid #D1D2D3;" />
               
               <div class= "companyname">
                 <h2>
-                  品名:{$product.kindname}
+                  品名:<?php echo ($product["kindname"]); ?>
                 </h2>
                 <p>
-                  {$product["kindtime"]}
+                  <?php echo ($product["kindtime"]); ?>
                 </p>
                 </div>
 
@@ -337,7 +333,7 @@ var myChart = new Chart(ctx, {
 <div class="mui-divider">
   
 </div>
-              <p class="infotext">{$product["kindintroduction"]}</p>
+              <p class="infotext"><?php echo ($product["kindintroduction"]); ?></p>
               </div>      
           </div>
 <br>

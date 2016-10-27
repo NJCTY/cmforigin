@@ -1,0 +1,1 @@
+a:8:{i:0;s:7:"star_id";i:1;s:2:"ip";i:2;s:11:"productcode";i:3;s:11:"companycode";i:4;s:9:"timestamp";i:5;s:5:"level";s:3:"_pk";s:7:"star_id";s:5:"_type";a:6:{s:7:"star_id";s:7:"int(11)";s:2:"ip";s:12:"varchar(255)";s:11:"productcode";s:11:"varchar(16)";s:11:"companycode";s:11:"varchar(16)";s:9:"timestamp";s:9:"timestamp";s:5:"level";s:24:"set('1','2','3','4','5')";}}

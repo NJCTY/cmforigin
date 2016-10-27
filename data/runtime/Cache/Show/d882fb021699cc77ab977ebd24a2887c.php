@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
     <head>
       <meta charset="utf-8">
@@ -18,15 +18,15 @@
     }
 
   </style>
-        <title>{$company.name}</title>
-                <link rel="stylesheet" href="__PUBLIC__/css/circle.css">
-        <link rel="stylesheet" href="__PUBLIC__/bower_components/weui/dist/style/weui.min.css"/>
-        <link rel="stylesheet" href="__PUBLIC__/css/origin.css">
-          <link rel="stylesheet" href="__PUBLIC__/assets/css/amazeui.min.css">
-          <link href="__PUBLIC__/mui-0.7.5/css/mui.min.css" rel="stylesheet" type="text/css" />
-<script src="__PUBLIC__/mui-0.7.5/js/mui.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/jquery-1.5.1.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/jquery.raty.js"></script>
+        <title><?php echo ($company["name"]); ?></title>
+                <link rel="stylesheet" href="/public/css/circle.css">
+        <link rel="stylesheet" href="/public/bower_components/weui/dist/style/weui.min.css"/>
+        <link rel="stylesheet" href="/public/css/origin.css">
+          <link rel="stylesheet" href="/public/assets/css/amazeui.min.css">
+          <link href="/public/mui-0.7.5/css/mui.min.css" rel="stylesheet" type="text/css" />
+<script src="/public/mui-0.7.5/js/mui.min.js"></script>
+<script type="text/javascript" src="/public/js/jquery-1.5.1.js"></script>
+<script type="text/javascript" src="/public/js/jquery.raty.js"></script>
 
 
           <!-- Set render engine for 360 browser -->
@@ -50,37 +50,37 @@
   <!-- Tile icon for Win8 (144x144 + tile color) -->
   <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
   <meta name="msapplication-TileColor" content="#0e90d2">
-  <link rel="stylesheet" href="__PUBLIC__/assets/css/app.css">
+  <link rel="stylesheet" href="/public/assets/css/app.css">
     </head>
     <body class="bg">
     	
     	<div>
    			 <div class="header">
-        <img src="{$product.imgbg}" id="headimg">
+        <img src="<?php echo ($product["imgbg"]); ?>" id="headimg">
 
           <div class="headtext">
-            <h1>{$product.name}</h1>
-						<p>上市时间: {$batch.outtime} 产地: {$batch.place}</p>
+            <h1><?php echo ($product["name"]); ?></h1>
+						<p>上市时间: <?php echo ($batch["outtime"]); ?> 产地: <?php echo ($batch["place"]); ?></p>
 				</div>
  		  </div>
  		   </div>
  		   				<div class="menu">
 <div class="am-btn-group am-btn-group-justify">
- <a type="button" class="am-btn am-btn-success" href="__ROOT__/index.php/Show/index/index?id={$origincode}">档案</a>
- <a type="button" class="am-btn am-btn-success" href="__ROOT__/index.php/Show/index/video?id={$origincode}">视频</a>
-  <a type="button" class="am-btn am-btn-success am-active" href="__ROOT__/index.php/Show/index/comment?id={$origincode}">评分</a>
-   <a type="button" class="am-btn am-btn-success" href="__ROOT__/index.php/Show/index/comp?id={$origincode}">简介</a>
+ <a type="button" class="am-btn am-btn-success" href="/index.php/Show/index/index?id=<?php echo ($origincode); ?>">档案</a>
+ <a type="button" class="am-btn am-btn-success" href="/index.php/Show/index/video?id=<?php echo ($origincode); ?>">视频</a>
+  <a type="button" class="am-btn am-btn-success am-active" href="/index.php/Show/index/comment?id=<?php echo ($origincode); ?>">评分</a>
+   <a type="button" class="am-btn am-btn-success" href="/index.php/Show/index/comp?id=<?php echo ($origincode); ?>">简介</a>
 </div>
 </div>
 
   			  <div class="info" style="height: auto;overflow: display;">
   			  		<div class="title">
-  			  			<img src="__PUBLIC__/image/6.png" class="titleimg">
+  			  			<img src="/public/image/6.png" class="titleimg">
               </div>
 <div class="companyinfo">
 
-                <div class="c100 p{$percent} small circle">
-                    <span>{$percent}%</span>
+                <div class="c100 p<?php echo ($percent); ?> small circle">
+                    <span><?php echo ($percent); ?>%</span>
                     <div class="slice">
                         <div class="bar"></div>
                         <div class="fill"></div>
@@ -100,7 +100,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-  if({$star.level}){
+  if(<?php echo ($star["level"]); ?>){
     $("#welcome").hide();
   }else{
     $("#thank").hide();
@@ -120,13 +120,13 @@ function rat(star,result,m){
     starOff: 'star-off-big.png',
     starOn: 'star-on-big.png',
     number: 5,
-    score: {$star.level},
+    score: <?php echo ($star["level"]); ?>,
         size: 48,
     target: result, 
     targetKeep : true,//targetKeep 属性设置为true，用户的选择值才会被保持在目标DIV中，否则只是鼠标悬停时有值，而鼠标离开后这个值就会消失
     click: function (score, evt) {
         alert('感谢您的评价！');
-        $.ajax({url:"/index.php/Show/index/star?id={$origincode}&level="+score,async:false});
+        $.ajax({url:"/index.php/Show/index/star?id=<?php echo ($origincode); ?>&level="+score,async:false});
         $("#welcome").hide();
         $("#thank").show();
     }
@@ -147,8 +147,8 @@ function rat(star,result,m){
 
 function getcomment(page){
     $.post("/index.php/Show/index/comment_index",{
-    productcode:"{$product.productcode}",
-    companycode:"{$product.companycode}",
+    productcode:"<?php echo ($product["productcode"]); ?>",
+    companycode:"<?php echo ($product["companycode"]); ?>",
     page:page
     },function(data){
     for(var k=0;k<5;k++)
@@ -176,8 +176,8 @@ $("#buttonone").click(function(){
    var currentlength =$("#postdata").val().length; 
    if(currentlength<=50){
        $.post("/index.php/Show/index/comment_post",{
-    productcode:"{$product.productcode}",
-    companycode:"{$product.companycode}",
+    productcode:"<?php echo ($product["productcode"]); ?>",
+    companycode:"<?php echo ($product["companycode"]); ?>",
     data:textdata
     },function(data){
       if(data['isdone'] == 1){
@@ -208,7 +208,7 @@ return false;
 
               <div class="info" style="height:40px;">          
                  <div class="title">
-                <img src="__PUBLIC__/image/7.png" class="titleimg" id="writecomment">
+                <img src="/public/image/7.png" class="titleimg" id="writecomment">
               </div>
               </div>
               <div class="info" style="height:120px;display: none;" id="textarea">          <form>

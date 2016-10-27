@@ -304,7 +304,7 @@ class AdminPageController extends AdminbaseController {
 	public function qrcode($level=3,$size=4)
   {
   	$id = $_GET['id'];
-  	$url = "http://".$_SERVER['SERVER_NAME']."/Show?id=".$id;
+  	$url = "http://".$_SERVER['SERVER_NAME']."/index.php/Show?id=".$id;
        Vendor('phpqrcode.phpqrcode');
        $errorCorrectionLevel =intval($level) ;//容错级别 
        $matrixPointSize = intval($size);//生成图片大小 
